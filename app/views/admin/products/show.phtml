@@ -1,0 +1,23 @@
+ <section>
+ 	<header class='page-header'>
+ 		<div class='clearfix'>
+ 			<div class='left'>
+ 				<h3> Produto <?= $product->getName(); ?> </h3>
+ 				<small class='help-block'> Cadastrado em <?= $product->getCreatedAt() ?> </small>
+ 			</div>
+ 			<div class='right'>
+ 				<?= link_to("/admin/produtos/{$product->getId()}/editar",'Editar')?> |
+ 				<?= link_to('/admin/produtos', 'Todos os produtos')?>
+ 			</div>
+ 		</div>
+ 	</header>
+ 	<article>
+ 		<p><strong>ID: </strong><?= $product->getId() ?></p>
+ 		<p><strong>Nome: </strong><?= $product->getName() ?></p>
+ 		<p><strong>Descrição: </strong><?= $product->getDescription() ?></p>
+ 		<p><strong>Preço: </strong><?= $product->getPrice() ?></p>
+ 		<p><strong>Quantidade em Estoque: </strong><?= $product->getStock() ?></p>
+ 		<p><strong>Departamento: </strong><?= $product->getDepartment_Id() ?></p>
+ 		<p><strong>Destaque: </strong><?= boolean_convert($product->getFeactured()) ?></p>
+ 		</article>
+ </section>

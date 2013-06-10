@@ -1,0 +1,18 @@
+ <section>
+ 	<header class='page-header'>
+ 		<div class='clearfix'>
+ 			<div class='left'>
+ 				<h3> Departamento <?= $department->getName(); ?> </h3>
+ 				<small class='help-block'> Cadastrado em <?= $department->getCreatedAt() ?> </small>
+ 			</div>
+ 			<div class='right'>
+ 				<?= link_to("/admin/departamentos/{$department->getId()}/editar",'Editar')?> |
+ 				<?= link_to('/admin/departamentos', 'Todos os departamentos')?>
+ 			</div>
+ 		</div>
+ 	</header>
+ 	<article>
+ 		<p><strong>ID: </strong><?= $department->getId() ?></p>
+ 		<p><strong>Nome: </strong><?= $department->getName() ?></p>
+ 		</article>
+ </section>

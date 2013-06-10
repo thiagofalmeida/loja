@@ -1,0 +1,17 @@
+ <section>
+ 	<header class='page-header'>
+ 		<div class='clearfix'>
+ 			<h1 class='left'>Formulário de Cadastro de Departamento</h1>
+ 			<div class='right'>
+ 				<?= link_to('/admin/departamentos', 'Todos os departamentos')?>
+ 			</div>
+ 		</div>
+ 	</header>
+ 	<article>
+ 		<?php
+ 			$action = url_for("/admin/departamentos");
+ 			$submit = 'Criar';
+ 			require 'form.inc.phtml';
+ 		?>
+ 	</article>
+ </section>

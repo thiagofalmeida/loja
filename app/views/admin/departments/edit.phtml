@@ -1,0 +1,17 @@
+<section>
+	<header class='page-header'>
+		<div class='clearfix'>
+			<h1 class='left'>Formulário de Edição de Departamento</h1>
+			<div class='right'>
+				<?= link_to('/admin/departamentos', 'Todos os Departamentos')?>
+			</div>
+		</div>
+	</header>
+	<article>
+		<?php
+			$action = url_for("/admin/departamentos/{$department->getId()}");
+			$submit = 'Atualizar';
+			require 'form.inc.phtml';
+		?>
+	</article>
+</section>

@@ -1,0 +1,74 @@
+<div class="address-group">
+	<div class="header-form">
+		<h1>Endereço para Entrega</h1>
+	</div>
+
+<div class="container-address">
+		<div class="span3">
+			<div class="control-group <?= $$action->errors('cep') ? 'error' : '' ?>">
+				<label class='control-label' for='<?= $action; ?>_cep'>CEP *</label>
+				<div class='controls'>
+					<input type='text' id='user_cep' name='<?= $action; ?>[cep]' placeholder='00000-000' onblur="return search_address()" value='<?= $$action->getCep() ?>'>
+					<span class='help-inline'><?= $$action->errors('cep') ?></span>
+				</div>
+			</div>
+		</div>
+
+
+	<div class="span3">
+		<div class="control-group <?= $$action->errors('street') ? 'error' : '' ?>">
+			<label class='control-label' for='<?= $action; ?>_street'>Rua *</label>
+			<div class='controls'>
+				<input type='text' id='street' name='<?= $action; ?>[street]' placeholder='Rua dos Pintores' value='<?= $$action->getStreet() ?>'>
+				<span class='help-inline'><?= $$action->errors('street') ?></span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="span3">
+		<div class="control-group <?= $$action->errors('city') ? 'error' : '' ?>">
+			<label class='control-label' for='<?= $action; ?>_city'>Cidade *</label>
+			<div class='controls'>
+				<input type='text' id='city' name='<?= $action; ?>[city]' placeholder='Ex. Guarapuava' value='<?= $$action->getCity() ?>'>
+				<span class='help-inline'><?= $$action->errors('city') ?></span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="span3">
+		<div class="control-group <?= $$action->errors('state') ? 'error' : '' ?>">
+			<label class='control-label' for='<?= $action; ?>_state'>Estado *</label>
+			<div class='controls'>
+				<input type='text' id='state' name='<?= $action?>[state]' placeholder='Ex. Paraná' value='<?= $$action->getState() ?>'>
+				<span class='help-inline'><?= $$action->errors('state') ?></span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="teste">
+		<div class="span3">
+		<div class="control-group <?= $$action->errors('neighboorhood') ? 'error' : '' ?>">
+			<label class='control-label' for='<?= $action; ?>_neighboorhood'>Bairro *</label>
+			<div class='controls'>
+				<input type='text' id='neighboorhood' name='<?= $action?>[neighboorhood]' placeholder='Ex. Paraná' value='<?= $$action->getNeighboorhood() ?>'>
+				<span class='help-inline'><?= $$action->errors('neighboorhood') ?></span>
+			</div>
+		</div>
+	</div>
+	
+		<div class="span3">
+			<div class="control-group <?= $$action->errors('num') ? 'error' : '' ?>">
+				<label class='control-label' for='<?= $action; ?>_num'>Número *</label>
+				<div class='controls'>
+					<input type='text' id='num' name='<?= $action; ?>[num]' placeholder='Ex. 1310' value='<?= $$action->getNum() ?>'>
+					<span class='help-inline'><?= $$action->errors('num') ?></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="send-form">
+		<input type='submit' value='<?= $submit ?>' class='btn btn-primary'/>
+	</div>
+</div>
+</form>

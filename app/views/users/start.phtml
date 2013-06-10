@@ -1,0 +1,23 @@
+<section>
+	<header class='page-header'>
+		<h1>Escolha o tipo de Usuário</h1>
+	</header>
+	<article>
+		<form id='new_user' action='<?= url_for('/registre-se/pessoa') ?>' method='post' class='form-vertical' novalidate>
+			<div class="control-group">
+				<div class="controls">
+					<label class="radio">
+						<input type="radio" name="user" value="common" checked> Pessoa Física
+					</label>
+					<label class="radio">
+						<input type="radio" name="user" value="corporative"> Pessoa Juridica
+					</label>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<input type="submit" class="btn btn-primary" id="btn-checkout" value="Registrar">
+			</div>
+		</fom>
+	</article>
+</section>

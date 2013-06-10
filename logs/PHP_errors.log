@@ -1,0 +1,23 @@
+[10-Jun-2013 19:44:23 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::setdepartment_id() in /var/www/html/loja/app/models/base.class.php on line 11
+[10-Jun-2013 19:44:26 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::setdepartment_id() in /var/www/html/loja/app/models/base.class.php on line 11
+[10-Jun-2013 19:44:26 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::setdepartment_id() in /var/www/html/loja/app/models/base.class.php on line 11
+[10-Jun-2013 19:44:38 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::getDepartmentId() in /var/www/html/loja/app/views/admin/products/index.phtml on line 32
+[10-Jun-2013 19:44:59 America/Sao_Paulo] PHP Warning:  pg_query_params(): Query failed: ERRO:  sintaxe de entrada é inválida para integer: &quot;&quot; in /var/www/html/loja/app/models/product.class.php on line 112
+[10-Jun-2013 19:44:59 America/Sao_Paulo] PHP Fatal error:  Call to a member function getName() on a non-object in /var/www/html/loja/app/views/admin/products/show.phtml on line 5
+[10-Jun-2013 19:45:02 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::setdepartment_id() in /var/www/html/loja/app/models/base.class.php on line 11
+[10-Jun-2013 19:45:13 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::setdepartment_id() in /var/www/html/loja/app/models/base.class.php on line 11
+[10-Jun-2013 19:48:16 America/Sao_Paulo] PHP Notice:  Undefined index: department in /var/www/html/loja/app/controllers/admin/product_controller.class.php on line 38
+[10-Jun-2013 19:49:20 America/Sao_Paulo] PHP Notice:  Undefined variable: imap_8bit in /var/www/html/loja/app/models/product.class.php on line 147
+[10-Jun-2013 19:49:20 America/Sao_Paulo] PHP Warning:  pg_query_params(): Query failed: ERRO:  coluna &quot;string&quot; não existe
+LINE 1: ...partment_id) values ($1, $2, $3, $4, $5, $6, $7, (string)) R...
+                                                             ^ in /var/www/html/loja/app/models/product.class.php on line 150
+[10-Jun-2013 19:50:30 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::setdepartment_id() in /var/www/html/loja/app/models/base.class.php on line 11
+[10-Jun-2013 19:53:05 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::getDepartmentId() in /var/www/html/loja/app/views/admin/products/index.phtml on line 32
+[10-Jun-2013 19:53:37 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::getDepartmentId() in /var/www/html/loja/app/views/admin/products/index.phtml on line 32
+[10-Jun-2013 19:54:13 America/Sao_Paulo] PHP Notice:  Undefined variable: department_Id in /var/www/html/loja/app/models/product.class.php on line 76
+[10-Jun-2013 19:54:13 America/Sao_Paulo] PHP Notice:  Undefined variable: department_Id in /var/www/html/loja/app/models/product.class.php on line 76
+[10-Jun-2013 19:54:13 America/Sao_Paulo] PHP Notice:  Undefined variable: department_Id in /var/www/html/loja/app/models/product.class.php on line 76
+[10-Jun-2013 19:54:13 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::getDepartmentId() in /var/www/html/loja/app/views/admin/products/index.phtml on line 32
+[10-Jun-2013 19:54:26 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Product::getDepartmentId() in /var/www/html/loja/app/views/admin/products/index.phtml on line 32
+[10-Jun-2013 19:55:30 America/Sao_Paulo] PHP Warning:  pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;feactured&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (15, 999, 999, R$ 999,00, null, 999, 2013-06-10 19:55:30, 2178e99665d880875474866e39e699f0.png, 9). in /var/www/html/loja/app/models/product.class.php on line 150

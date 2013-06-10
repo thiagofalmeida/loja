@@ -1,0 +1,75 @@
+<form action='<?= $action ?>' method='POST' class='form-vertical' enctype="multipart/form-data" novalidate>
+
+	<div class="control-group <?= $product->errors('id') ? 'error' : '' ?>" >
+		<label class='control-label' for='product_id'>Código *</label>
+		<div class="controls">
+		
+
+				<input type='text' id='product_id' name='product[id]' value='<?= $product->getId() ?>'>
+			<span class='help-inline'><?= $product->errors('id') ?></span>
+		</div>
+	</div>
+
+	<div class="control-group <?= $product->errors('name') ? 'error' : '' ?>" >
+		<label class='control-label' for='product_namel'>Nome *</label>
+		<div class="controls">
+			<input type='text' id='product_name' name='product[name]' placeholder='Nome do Departamento' value='<?= $product->getName() ?>'>
+			<span class='help-inline'><?= $product->errors('name') ?></span>
+		</div>
+	</div>
+
+	<div class="control-group <?= $product->errors('description') ? 'error' : '' ?>" >
+		<label class='control-label' for='product_description'>Descrição *</label>
+		<div class="controls">
+			<textarea name='product[description]'><?= $product->getDescription() ?></textarea>
+			<span class='help-inline'><?= $product->errors('description') ?></span>
+		</div>
+	</div>
+	
+	<div class="control-group <?= $product->errors('price') ? 'error' : '' ?>" >
+		<label class='control-label' for='product_price'>Preço *</label>
+		<div class="controls">
+			<input type='text' id='product_price' name='product[price]' placeholder='ex. 10,00' value='<?= $product->getPrice() ?>'>
+			<span class='help-inline'><?= $product->errors('price') ?></span>
+		</div>
+	</div>
+
+	<div class="control-group <?= $product->errors('stock') ? 'error' : '' ?>" >
+		<label class='control-label' for='product_stock'>Quantidade em Estoque *</label>
+		<div class="controls">
+			<input type='text' id='product_stock' name='product[stock]' placeholder='10' value='<?= $product->getStock() ?>'>
+			<span class='help-inline'><?= $product->errors('stock') ?></span>
+		</div>
+	</div>
+
+	<div class="control-group <?= $product->errors('photo') ? 'error' : '' ?>" >
+		<label class='control-label' for='product_photo'>Imagem</label>
+		<div class="controls">
+			<input type='file' id='product_photo' name='product_photo'>
+			<span class='help-inline'>
+				<?= @$product->errors('photo')?>
+			</span>
+		</div>
+	</div>
+
+	<div class="control-group <?= $product->errors('departmentId') ? 'error' : '' ?>" >
+		<label class='control-label' for='product_department'>Departamento *</label>
+		<div class="controls">
+			<select name="department" id="">
+			<?php 
+
+			foreach ($departments as $department) { ?>
+				<option value="<?= $department->getId(); ?>"><?= $department->getName() ?></option>
+			<?php }?>
+			</select>
+			<span class='help-inline'> <?= @$product->errors('departmentId')?>
+			</span>
+		</div>
+	</div>
+
+	<label class="checkbox">
+		<input type="checkbox" name='product[feactured]' <?= $product->getFeactured() ? 'checked' : '' ?> > Destaque
+	</label>
+
+	<input type='submit' value='<?= $submit ?>' class='btn btn-primary'/>
+</form>

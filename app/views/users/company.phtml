@@ -1,0 +1,85 @@
+<section>
+	<header class='page-header'>
+		<h1>Dados Pessoais de Cliente Juridico</h1>
+	</header>
+
+	<article>
+		<form action='<?= url_for("/registre-se/pessoa-juridica"); ?>' method='POST' class='form-vertical' novalidate>
+
+			<div class="span3">
+				<div class="control-group <?= $company->errors('name') ? 'error' : '' ?>">
+					<label class='control-label' for='company_name'>Nome do Responsavel *</label>
+					<div class="controls">
+						<input type='text' id='company_name' name='company[name]' placeholder='Seu nome' value='<?= $company->getName() ?>'>
+						<span class='help-inline'><?= $company->errors('name') ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span3">
+				<div class="control-group <?= $company->errors('socialReason') ? 'error' : '' ?>">
+					<label class='control-label' for='company_socialReason'>Razão Social *</label>
+					<div class='controls'>
+						<input type='text' id='company_socialReason' name='company[socialReason]' placeholder='Nome da Empresa' value='<?= $company->getSocialreason() ?>'>
+						<span class='help-inline'><?= $company->errors('socialReason') ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span3">
+				<div class="control-group <?= $company->errors('ie') ? 'error' : '' ?>">
+					<label class='control-label' for='company_ie'>Iscrição Estadual *</label>
+					<div class="controls">
+						<input type="text" id="company_ie" name='company[ie]' placeholder='tipo de ie' value='<?= $company->getIe() ?>'>
+						<span class='help-inline'><?= $company->errors('ie') ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span3">
+				<div class="control-group <?= $company->errors('cnpj') ? 'error' : '' ?>">
+					<label class='control-label' for='company_cnpj'>CNPJ *</label>
+					<div class="controls">
+						<input type='text' id='company_cnpj' name='company[cnpj]' placeholder='000.000.000-00' value='<?= $company->getCnpj() ?>'>
+						<span class='help-inline'><?= $company->errors('cnpj') ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="teste">
+				<div class="span3">
+					<div class="control-group <?= $company->errors('phone') ? 'error' : '' ?>">
+						<label class='control-label' for='company_phone'>Telefone *</label>
+						<div class='controls'>
+							<input type='text' id='company_phone' name='company[phone]' placeholder='(00)0000-0000' value='<?= $company->getPhone() ?>'>
+							<span class='help-inline'><?= $company->errors('phone') ?></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="span3">
+					<div class="control-group <?= $company->errors('email') ? 'error' : '' ?>">
+						<label class='control-label' for='company_email'>Email *</label>
+						<div class='controls'>
+							<input type='text' id='company_email' name='company[email]' placeholder='Email' value='<?= $company->getEmail() ?>'>
+							<span class='help-inline'><?= $company->errors('email') ?></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="span3">
+				<div class="control-group <?= $company->errors('password') ? 'error' : '' ?>">
+					<label class='control-label' for='company_password'>Senha *</label>
+					<input type='password' id='company_password' name='company[password]' placeholder='Password' value='<?= $company->getPassword() ?>'>
+					<span class='help-inline'><?= $company->errors('password') ?></span>
+				</div>
+			</div>
+
+			<?php
+				$submit = 'Registrar-se';
+				$action = 'company';
+				require '_form.phtml';
+			?>
+	</article>
+</section>

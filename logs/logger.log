@@ -1,0 +1,679 @@
+[10.06.2013 - 19:21:20][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:21:20][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 3123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => 
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => default.jpeg
+            [size:Photo:private] => 0
+            [type:Photo:private] => 
+            [tmp_name:Photo:private] => 
+            [folder:Photo:private] => products
+            [error:Photo:private] => 4
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:21:20
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => default.jpeg
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:21:20
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:21:20][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;feactured&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (4, 3123, 123, R$ 123,00, null, 123, 2013-06-10 19:21:20, null, 9).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:21:30][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:21:30][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 3123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => default.jpeg
+            [size:Photo:private] => 0
+            [type:Photo:private] => 
+            [tmp_name:Photo:private] => 
+            [folder:Photo:private] => products
+            [error:Photo:private] => 4
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:21:30
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => default.jpeg
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:21:30
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:21:30][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;photoname&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (5, 3123, 123, R$ 123,00, t, 123, 2013-06-10 19:21:30, null, 9).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:23:06][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:23:06][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 3123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => ae17bf354b9fc281b0db349f2e399ab6.png
+            [size:Photo:private] => 63319
+            [type:Photo:private] => image/png
+            [tmp_name:Photo:private] => /tmp/php2qmNf1
+            [folder:Photo:private] => products
+            [error:Photo:private] => 0
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:23:06
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => ae17bf354b9fc281b0db349f2e399ab6.png
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:23:06
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:23:06][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;photoname&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (6, 3123, 123, R$ 123,00, t, 123, 2013-06-10 19:23:06, null, 9).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:25:41][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:25:41][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:25:41][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:25:41][NOTICE] - /loja/
+[10.06.2013 - 19:25:41][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:25:41][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:25:41][NOTICE] - /loja/
+[10.06.2013 - 19:25:43][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:25:54][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:25:54][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 11
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => 34583ed14b01566f75a0d4d98b97914a.png
+            [size:Photo:private] => 135786
+            [type:Photo:private] => image/png
+            [tmp_name:Photo:private] => /tmp/phpsRFh9O
+            [folder:Photo:private] => products
+            [error:Photo:private] => 0
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:25:54
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => 34583ed14b01566f75a0d4d98b97914a.png
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:25:54
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:25:54][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;photoname&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (7, 123, 123, R$ 123,00, t, 123, 2013-06-10 19:25:54, null, 11).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:25:55][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:25:55][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:25:55][NOTICE] - /loja/
+[10.06.2013 - 19:25:55][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:25:55][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:25:55][NOTICE] - /loja/
+[10.06.2013 - 19:27:40][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:27:40][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:27:40][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:27:40][NOTICE] - /loja/
+[10.06.2013 - 19:27:40][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:27:40][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:27:40][NOTICE] - /loja/
+[10.06.2013 - 19:27:41][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:27:51][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:27:51][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => e1e0cc136a5f802f02d4be66902b3d58.png
+            [size:Photo:private] => 48255
+            [type:Photo:private] => image/png
+            [tmp_name:Photo:private] => /tmp/phpgdGySw
+            [folder:Photo:private] => products
+            [error:Photo:private] => 0
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:27:51
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => e1e0cc136a5f802f02d4be66902b3d58.png
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:27:51
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:27:51][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;photoname&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (8, 123, 123, R$ 123,00, t, 123, 2013-06-10 19:27:51, null, 9).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:27:51][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:27:51][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:27:51][NOTICE] - /loja/
+[10.06.2013 - 19:27:51][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:27:51][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:27:51][NOTICE] - /loja/
+[10.06.2013 - 19:29:23][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:29:23][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => e99e57997d304d6f90e9294d1a943ba4.png
+            [size:Photo:private] => 48255
+            [type:Photo:private] => image/png
+            [tmp_name:Photo:private] => /tmp/phpRg3dPe
+            [folder:Photo:private] => products
+            [error:Photo:private] => 0
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:29:23
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => e99e57997d304d6f90e9294d1a943ba4.png
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:29:23
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:29:23][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;photoname&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (9, 123, 123, R$ 123,00, t, 123, 2013-06-10 19:29:23, null, 9).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:29:27][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:29:27][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:29:27][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:29:27][NOTICE] - /loja/
+[10.06.2013 - 19:29:27][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:29:27][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:29:27][NOTICE] - /loja/
+[10.06.2013 - 19:29:28][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:29:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:29:35][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => 6231e5eb7bd8e0ae8f5403827fe835cf.png
+            [size:Photo:private] => 67598
+            [type:Photo:private] => image/png
+            [tmp_name:Photo:private] => /tmp/phpFEudHK
+            [folder:Photo:private] => products
+            [error:Photo:private] => 0
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:29:35
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => 6231e5eb7bd8e0ae8f5403827fe835cf.png
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:29:35
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:29:35][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;photoname&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (10, 123, 123, R$ 123,00, t, 123, 2013-06-10 19:29:35, null, 9).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:29:36][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:29:36][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:29:36][NOTICE] - /loja/
+[10.06.2013 - 19:29:36][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:29:36][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:29:36][NOTICE] - /loja/
+[10.06.2013 - 19:31:21][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:31:21][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:31:21][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:31:21][NOTICE] - /loja/
+[10.06.2013 - 19:31:21][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:31:21][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:31:21][NOTICE] - /loja/
+[10.06.2013 - 19:31:22][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:31:34][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:31:34][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => default.jpeg
+            [size:Photo:private] => 0
+            [type:Photo:private] => 
+            [tmp_name:Photo:private] => 
+            [folder:Photo:private] => products
+            [error:Photo:private] => 4
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:31:34
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => default.jpeg
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:31:34
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:31:34][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  INSERT tem mais colunas alvo do que expressões
+LINE 1: ...n, photoname, price, feactured, stock, createdAt, department...
+                                                             ^
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:31:34][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:31:34][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:31:34][NOTICE] - /loja/
+[10.06.2013 - 19:31:34][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:31:34][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:31:34][NOTICE] - /loja/
+[10.06.2013 - 19:32:26][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:32:26][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:32:26][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:32:26][NOTICE] - /loja/
+[10.06.2013 - 19:32:26][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:32:26][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:32:26][NOTICE] - /loja/
+[10.06.2013 - 19:32:26][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:32:26][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:32:26][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:32:27][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:32:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:32:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:33:56][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:33:58][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:00][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:34:02][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:04][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:04][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:05][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:05][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:05][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:05][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:09][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:09][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:09][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:10][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:10][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:10][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:10][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:10][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:10][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:34:10][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:35:07][NOTICE] - /loja/admin/
+[10.06.2013 - 19:35:09][NOTICE] - /loja/admin/
+[10.06.2013 - 19:35:12][NOTICE] - /loja/admin/
+[10.06.2013 - 19:35:14][NOTICE] - /loja/
+[10.06.2013 - 19:35:15][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:13][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:13][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:13][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:15][NOTICE] - /loja/
+[10.06.2013 - 19:36:17][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:17][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:21][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:34][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:36][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:36:36][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:37:59][NOTICE] - /loja/
+[10.06.2013 - 19:37:59][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:37:59][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:37:59][NOTICE] - /loja/
+[10.06.2013 - 19:37:59][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:37:59][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:37:59][NOTICE] - /loja/
+[10.06.2013 - 19:38:01][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:51][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:51][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:51][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:51][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:52][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:52][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:52][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:38:52][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:39:35][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:39:37][NOTICE] - /loja/
+[10.06.2013 - 19:39:54][NOTICE] - /loja/
+[10.06.2013 - 19:39:54][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:39:54][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:39:54][NOTICE] - /loja/
+[10.06.2013 - 19:39:54][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:39:54][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:39:54][NOTICE] - /loja/
+[10.06.2013 - 19:39:56][NOTICE] - /loja/login
+[10.06.2013 - 19:40:07][NOTICE] - /loja/login
+[10.06.2013 - 19:40:12][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:40:57][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:41:58][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:41:59][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:41:59][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:41:59][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:41:59][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:00][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:00][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:00][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:00][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:01][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:01][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:02][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:02][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:02][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:03][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:42:03][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:44:23][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:44:26][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:44:26][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:44:38][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:44:45][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:44:53][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:44:59][NOTICE] - /loja/admin/produtos/
+[10.06.2013 - 19:44:59][NOTICE] - /loja/
+[10.06.2013 - 19:45:02][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:45:05][NOTICE] - /loja/
+[10.06.2013 - 19:45:10][NOTICE] - /loja/produtos
+[10.06.2013 - 19:45:13][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:47:49][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:48:05][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:48:16][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:48:16][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:48:16][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:48:16][NOTICE] - /loja/
+[10.06.2013 - 19:48:16][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:48:16][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:48:16][NOTICE] - /loja/
+[10.06.2013 - 19:49:12][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:49:12][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:49:12][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:49:12][NOTICE] - /loja/
+[10.06.2013 - 19:49:12][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:49:12][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:49:12][NOTICE] - /loja/
+[10.06.2013 - 19:49:20][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:49:20][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 123
+    [description:Product:private] => 123
+    [price:Product:private] => 123
+    [stock:Product:private] => 123
+    [feactured:Product:private] => on
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => a860bc185b14c4d456e6d7729e7742d7.png
+            [size:Photo:private] => 67598
+            [type:Photo:private] => image/png
+            [tmp_name:Photo:private] => /tmp/phpRrkF1B
+            [folder:Photo:private] => products
+            [error:Photo:private] => 0
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:49:20
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => a860bc185b14c4d456e6d7729e7742d7.png
+    [id:protected] => 123
+    [createdAt:protected] => 2013-06-10 19:49:20
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:49:20][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  coluna &quot;string&quot; não existe
+LINE 1: ...partment_id) values ($1, $2, $3, $4, $5, $6, $7, (string)) R...
+                                                             ^
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:49:20][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:49:20][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:49:20][NOTICE] - /loja/
+[10.06.2013 - 19:49:20][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:49:20][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:49:20][NOTICE] - /loja/
+[10.06.2013 - 19:50:23][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:50:23][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:50:23][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:50:23][NOTICE] - /loja/
+[10.06.2013 - 19:50:23][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:50:23][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:50:23][NOTICE] - /loja/
+[10.06.2013 - 19:50:30][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:50:30][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:52:46][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:52:47][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:52:47][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:52:47][NOTICE] - /loja/
+[10.06.2013 - 19:52:47][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:52:47][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:52:47][NOTICE] - /loja/
+[10.06.2013 - 19:52:54][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:53:05][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:53:05][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:53:37][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:54:13][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:54:14][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:54:14][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:54:14][NOTICE] - /loja/
+[10.06.2013 - 19:54:14][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:54:14][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:54:14][NOTICE] - /loja/
+[10.06.2013 - 19:54:26][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:54:26][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:54:26][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:54:26][NOTICE] - /loja/
+[10.06.2013 - 19:54:26][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:54:26][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:54:26][NOTICE] - /loja/
+[10.06.2013 - 19:54:42][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:55:06][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:55:17][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:55:17][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:55:20][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 19:55:30][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 19:55:30][!!ERROR!!] - Falha para salvar o objeto: Product Object
+(
+    [name:Product:private] => 999
+    [description:Product:private] => 999
+    [price:Product:private] => 999
+    [stock:Product:private] => 999
+    [feactured:Product:private] => 
+    [departmentId:Product:private] => 9
+    [photo:Product:private] => Photo Object
+        (
+            [name:Photo:private] => 2178e99665d880875474866e39e699f0.png
+            [size:Photo:private] => 134677
+            [type:Photo:private] => image/png
+            [tmp_name:Photo:private] => /tmp/phpyPSOUh
+            [folder:Photo:private] => products
+            [error:Photo:private] => 0
+            [id:protected] => 
+            [createdAt:protected] => 2013-06-10 19:55:30
+            [errors:protected] => Array
+                (
+                )
+
+        )
+
+    [photoName:Product:private] => 2178e99665d880875474866e39e699f0.png
+    [id:protected] => 99
+    [createdAt:protected] => 2013-06-10 19:55:30
+    [errors:protected] => Array
+        (
+        )
+
+)
+
+[10.06.2013 - 19:55:30][!!ERROR!!] - Error: Array
+(
+    [type] => 2
+    [message] => pg_query_params(): Query failed: ERRO:  valor nulo na coluna &quot;feactured&quot; viola a restrição não-nula
+DETAIL:  Failing row contains (15, 999, 999, R$ 999,00, null, 999, 2013-06-10 19:55:30, 2178e99665d880875474866e39e699f0.png, 9).
+    [file] => /var/www/html/loja/app/models/product.class.php
+    [line] => 150
+)
+
+[10.06.2013 - 19:55:30][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:55:30][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 19:55:30][NOTICE] - /loja/
+[10.06.2013 - 19:55:30][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:55:30][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 19:55:30][NOTICE] - /loja/
+[10.06.2013 - 20:00:43][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 20:00:43][NOTICE] - /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 20:00:43][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.woff?v=3.0.1
+[10.06.2013 - 20:00:43][NOTICE] - /loja/
+[10.06.2013 - 20:00:43][NOTICE] - /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 20:00:43][!!ERROR!!] - URL NOT FOUND: /loja/app/assets/font/fontawesome-webfont.ttf?v=3.0.1
+[10.06.2013 - 20:00:43][NOTICE] - /loja/
+[10.06.2013 - 20:00:45][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 20:00:57][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 20:00:57][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 20:01:00][NOTICE] - /loja/admin/produtos/novo
+[10.06.2013 - 20:01:08][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 20:01:08][NOTICE] - /loja/admin/produtos
+[10.06.2013 - 20:01:14][NOTICE] - /loja/admin/produtos/17

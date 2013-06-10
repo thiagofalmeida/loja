@@ -1,0 +1,88 @@
+<section>
+	<header class='page-header'>
+		<h1>Dados Pessoais de Cliente Físico</h1>
+	</header>
+	<article>
+		
+		<form action='<?= url_for("/registre-se/pessoa-fisica"); ?>' method='POST' class='form-vertical' novalidate>
+
+			<div class="span3">
+				<div class="control-group <?= $common->errors('name') ? 'error' : '' ?>">
+					<label class='control-label' for='common_namel'>Nome *</label>
+					<div class="controls">
+						<input type='text' id='common_name' name='common[name]' placeholder='Seu nome' value='<?= $common->getName() ?>'>
+						<span class='help-inline'><?= $common->errors('name') ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span3">
+				<div class="control-group<?= $common->errors('dtnasc') ? 'error' : '' ?>">
+					<label class='control-label' for='common_dtnasc'>Data de Nascimento *</label>
+					<div class='controls'>
+						<input type='text' id='common_dtnasc' name='common[dtnasc]' placeholder='00/00/0000' value='<?= $common->getDtnasc() ?>'>
+						<span class='help-inline'><?= $common->errors('dtnasc') ?></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="span3">
+				<div class="control-group">
+					<label class='control-label' for='common_namel'>Sexo *</label>
+					<div class="controls">
+						<input type='radio' id='common_sex' name='common[sex]' value='male' checked> Masculino
+						<input type='radio' id='common_sex' name='common[sex]' value='female'> Feminino
+					</div>
+				</div>
+			</div>
+
+			<div class="span3">
+				<div class="control-group <?= $common->errors('cpf') ? 'error' : '' ?>">
+					<label class='control-label' for='common_cpf'>CPF *</label>
+					<div class="controls">
+						<input type='text' id='common_cpf' name='common[cpf]' placeholder='000.000.000-00' value='<?= $common->getCpf() ?>'>
+						<span class='help-inline'><?= $common->errors('cpf') ?></span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="teste">
+				<div class="span3">
+					<div class="control-group <?= $common->errors('phone') ? 'error' : '' ?>">
+						<label class='control-label' for='common_phone'>Telefone *</label>
+						<div class='controls'>
+							<input type='text' id='common_phone' name='common[phone]' placeholder='(00)0000-0000' value='<?= $common->getPhone() ?>'>
+							<span class='help-inline'><?= $common->errors('phone') ?></span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="span3">
+					<div class="control-group <?= $common->errors('email') ? 'error' : '' ?>" >
+						<label class='control-label' for='common_email'>Email *</label>
+						<div class='controls'>
+							<input type='text' id='common_email' name='common[email]' placeholder='example@example.com' value='<?= $common->getEmail() ?>'>
+							<span class='help-inline'><?= $common->errors('email') ?></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="span3">
+				<div class="control-group <?= $common->errors('password') ? 'error' : '' ?>">
+					<label class='control-label' for='common_password'>Senha *</label>
+					<div class="controls">
+						<input type='password' id='common_password' name='common[password]' placeholder='Password' value='<?= $common->getPassword() ?>'>
+						<span class='help-inline'><?= $common->errors('password') ?></span>
+					</div>
+				</div>
+			</div>
+
+			<?php
+				$submit = 'Registrar-se';
+				$action = 'common';
+				require '_form.phtml';
+			?>
+	</article>
+</section>

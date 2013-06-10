@@ -1,0 +1,46 @@
+<section>
+    <header class='page-header'>
+        <div class='clearfix'>
+            <span class='left'><h3> Todos os Produtos</h3></span>
+            <span class="right">
+                <?= link_to("/admin/produtos/novo", "Novo Produto")?>
+            </span>
+        </div>
+    </header>
+
+    <article>
+        <table class='table table-bordered table-striped'>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Qt. em Estoque</th>
+                    <th>Departamento</th>
+                    <th>Destaque</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($products as $product) {?>
+                <tr>
+                    <td><?= $product->getId() ?></td>
+                    <td><?= $product->getName(); ?></td>
+                    <td><?= $product->getDescription(); ?></td>
+                    <td><?= $product->getPrice(); ?></td>
+                    <td><?= $product->getStock(); ?></td>
+                    <td><?= $product->getDepartment_Id(); ?></td>
+                    <td><?= boolean_convert($product->getFeactured()); ?></td>
+                    <td class='options'>
+                        <ul>
+                            <li><?= link_to("/admin/produtos/{$product->getId()}",'Visualizar')?></li>
+                            <li><?= link_to("/admin/produtos/{$product->getId()}/editar",'Editar')?></li>
+                            <li><?= link_to("/admin/produtos/{$product->getId()}/deletar",'Remover', 'data-confirm="Tem certeza?"')?></li>
+                        </ul>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </article>
+</section>

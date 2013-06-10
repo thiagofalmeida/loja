@@ -1,0 +1,28 @@
+<section>
+  <header class='page-header'>
+    <h3> Todas as Mensagens </h3>
+  </header>
+
+  <article>
+   <table class='table table-bordered table-striped'>
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Email</th>
+          <th>Mensagem</th>
+          <th>Criado em</th>
+        </tr>
+      </thead>
+      <tbody>
+       <?php foreach(Contact::all() as $contact) {?>
+          <tr>
+            <td><?= $contact->getName(); ?></td>
+            <td><?= $contact->getEmail(); ?></td>
+            <td><?= $contact->getContent(); ?></td>
+            <td><?= date('d/m/Y H:i:s', strtotime($contact->getCreatedAt())); ?></td>
+          </tr>
+       <?php } ?>
+      </tbody>
+    </table>
+  </article>
+</section>

@@ -1,0 +1,36 @@
+<section>
+    <header class='page-header'>
+        <div class='clearfix'>
+            <span class='left'><h3> Todos od Departamentos</h3></span>
+            <span class="right">
+                <?= link_to("/admin/departamentos/novo", "Novo Departamento")?>
+            </span>
+        </div>
+    </header>
+
+    <article>
+        <table class='table table-bordered table-striped'>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($departments as $department) {?>
+                <tr>
+                    <td><?= $department->getId(); ?></td>
+                    <td><?= $department->getName(); ?></td>
+                    <td class='options'>
+                        <ul>
+                            <li><?= link_to("/admin/departamentos/{$department->getId()}",'Visualizar')?></li>
+                            <li><?= link_to("/admin/departamentos/{$department->getId()}/editar",'Editar')?></li>
+                            <li><?= link_to("/admin/departamentos/{$department->getId()}/deletar",'Remover', 'data-confirm="Tem certeza?"')?></li>
+                        </ul>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </article>
+</section>

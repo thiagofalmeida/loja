@@ -1,0 +1,213 @@
+/* Utéis
+------------------------- */
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+
+table td.options {
+  width: 170px;
+}
+
+table td.options ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+table td.options ul li {
+  display: inline;
+}
+
+/* Subhead (other pages)
+------------------------- */
+.subhead {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding-top: 100px;
+  margin-bottom: 15px;
+  height: 140px;
+}
+.subhead h1 {
+  font-size: 60px;
+}
+.subhead p {
+  margin-bottom: 20px;
+}
+@media (max-width: 979px) {
+   .subhead {
+      padding-top: 0px;
+    }
+}
+/* Side menu fixed
+------------------------- */
+.sidebar-nav-fixed {
+    margin-top: 10px;
+    position:fixed;
+    width:21.97%;
+    top: 40px;
+}
+
+@media (max-width: 979px) {
+    .sidebar-nav-fixed {
+      position:static;
+      width:auto;
+    }
+}
+
+.nav-fixed > .active > a {
+  background-color: #f5f5f5;
+}
+
+/* Recents Searchs
+------------------------- */
+span.recents {
+  margin-right: 10px;
+}
+ul.recents {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ul.recents li {
+  display: inline;
+}
+
+/* Floats clearfix
+------------------------- */
+.right { float: right;}
+.left { float: left;}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+   content: " "; /* 1 */
+   display: table; /* 2 */
+}
+
+.clearfix:after {
+   clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+   *zoom: 1;
+}
+/* Logged
+------------------------- */
+#logged-info {
+  float: right;
+  font-size: 14px;
+}
+
+/* hangman
+------------------------- */
+article#gallows {
+  padding: 30px 0px;
+}
+
+#options .word {
+  letter-spacing: 4px;
+  font-size: 20px;
+}
+
+#new_game button{
+  margin-left: 21px;
+}
+
+#options div {
+  margin-top: 20px;
+}
+#options .won {
+  font-size: 40px;
+  margin: 20px 0px;
+  text-decoration: blink;
+}
+
+/* carrinho de compras 
+---------------------------*/
+
+.show-cart {
+  position: relative;
+  bottom: 100px;
+  left: 1100px;
+  width: 100px;
+}
+
+.size-cart {
+  width: 80px;
+}
+
+.show-items {
+  position: relative;
+  right: 55px;
+  top: 2px;
+  font-size: 25px;
+}
+
+/* Search
+---------------------------*/
+.show-search {
+  position: relative;
+  bottom: 152px;
+  left: 570px;
+  width: 200px;
+}
+
+#search {
+  width: 212px;
+}
+
+/* Formulario de cadastro de usuarios
+--------------------------------------*/
+.send-form {
+  position: relative;
+  right: 480px;
+  bottom: -85px;
+  height: 0px;
+}
+
+.teste {
+
+}
+
+#align-input {
+  position: relative;
+  left: 27px;
+}
+
+.address-group {
+  width: 982px
+}
+
+.header-form{
+  border-bottom: 1px solid;
+  padding-top: 190px;
+  padding-bottom: 15px;
+}
+
+.container-address {
+  padding-top: 35px;  
+}
+
+/* Show items 
+--------------------------------*/
+.thumb {
+  border: 1px solid #eee;
+  width: 188px;
+  padding-top: 240px;
+}
+
+#items {
+  margin-left: 31px;
+  padding-bottom: 35px
+}

@@ -1,0 +1,17 @@
+<section>
+	<header class='page-header'>
+		<div class='clearfix'>
+			<h1 class='left'>Formulário de Edição de Produto</h1>
+			<div class='right'>
+				<?= link_to('/admin/produtos', 'Todos os Produtos')?>
+			</div>
+		</div>
+	</header>
+	<article>
+		<?php
+			$action = url_for("/admin/produtos/{$product->getId()}");
+			$submit = 'Atualizar Produto';
+			require 'form.inc.phtml';
+		?>
+	</article>
+</section>

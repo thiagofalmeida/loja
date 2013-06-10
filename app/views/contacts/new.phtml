@@ -1,0 +1,36 @@
+<section>
+  <header class='page-header'>
+      <h1>Fale Conosco</h1>
+  </header>
+
+  <form id='new_contact' action='<?= url_for('/fale-conosco/enviar') ?>' method='POST' class='form-vertical' novalidate>
+
+   <div class="control-group <?= $contact->errors('name') ? 'error' : '' ?>" >
+      <label class='control-label' for='contact_namel'>Nome *</label>
+      <div class="controls">
+        <input type='text' id='contact_name' name='contact[name]' placeholder='Seu nome'
+               value='<?= $contact->getName() ?>'>
+       <span class='help-inline'><?= $contact->errors('name') ?></span>
+      </div>
+   </div>
+
+   <div class="control-group <?= $contact->errors('email') ? 'error' : '' ?>" >
+      <label class='control-label' for='contact_email'>Email *</label>
+      <div class='controls'>
+        <input type='text' id='contact_email' name='contact[email]' placeholder='Email'
+               value='<?= $contact->getEmail() ?>'>
+        <span class='help-inline'><?= $contact->errors('email') ?></span>
+      </div>
+   </div>
+
+   <div class="control-group <?= $contact->errors('content') ? 'error' : '' ?>" >
+      <label class='control-label' for='contact_content'>Texto *</label>
+      <div class='controls'>
+        <textarea name='contact[content]'><?= $contact->getContent() ?></textarea>
+        <span class='help-inline'><?= $contact->errors('content') ?></span>
+      </div>
+   </div>
+
+    <input type='submit' value='Enviar' class='btn btn-primary'/>
+  </form>
+</section>

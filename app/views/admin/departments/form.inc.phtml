@@ -1,0 +1,27 @@
+<form action='<?= $action ?>' method='POST' class='form-vertical' novalidate>
+
+	<div class="control-group <?= $department->errors('id') ? 'error' : '' ?>" >
+		<label class='control-label' for='department_id'>Codigo *</label>
+		<div class="controls">
+			<?php if ($submit == 'Atualizar') { ?>
+				<input type='text' id='department_id' name='department[id]' value='<?= $department->getId() ?>' disabled>
+				<input type='hidden' id='department_id' name='department[id]' value='<?= $department->getId() ?>'>
+			<?php } else { ?>
+				<input type='text' id='department_id' name='department[id]' value='<?= $department::nextVal() ?>' disabled>
+				<input type='hidden' id='department_id' name='department[id]' value='<?= $department::nextVal()  ?>'>
+
+			<?php }?>
+			<span class='help-inline'><?= $department->errors('id') ?></span>
+		</div>
+	</div>
+
+	<div class="control-group <?= $department->errors('name') ? 'error' : '' ?>" >
+		<label class='control-label' for='department_namel'>Nome *</label>
+		<div class="controls">
+			<input type='text' id='department_name' name='department[name]' placeholder='Nome do Departamento' value='<?= $department->getName() ?>'>
+			<span class='help-inline'><?= $department->errors('name') ?></span>
+		</div>
+	</div>
+	
+	<input type='submit' value='<?= $submit ?>' class='btn btn-primary'/>
+</form>
