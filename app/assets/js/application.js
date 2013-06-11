@@ -20,7 +20,13 @@ function search_address() {
 }
 
 jQuery(function($) {
-	$('#common_cpf').mask('999.999.999-42');
+    $("#common_phone").mask("(99)999-9999");
+    $("#common_dtnasc").mask("99/99/9999");
+    $('#common_cpf').mask('999.999.999-99');
+    $('#user_cep').mask('99999-999');
+   	$('#company_phone').mask('(99)9999-9999');
+    $('#company_cnpj').mask('99.999.999/9999-99');
+   	 
 });
 
 $(document).ready(function() {

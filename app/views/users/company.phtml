@@ -40,7 +40,7 @@
 				<div class="control-group <?= $company->errors('cnpj') ? 'error' : '' ?>">
 					<label class='control-label' for='company_cnpj'>CNPJ *</label>
 					<div class="controls">
-						<input type='text' id='company_cnpj' name='company[cnpj]' placeholder='000.000.000-00' value='<?= $company->getCnpj() ?>'>
+						<input type='text' id='company_cnpj' name='company[cnpj]' placeholder='00.000.000/0000-00' value='<?= $company->getCnpj() ?>'>
 						<span class='help-inline'><?= $company->errors('cnpj') ?></span>
 					</div>
 				</div>
