@@ -9,7 +9,6 @@
 			<?php } else { ?>
 				<input type='text' id='department_id' name='department[id]' value='<?= $department::nextVal() ?>' disabled>
 				<input type='hidden' id='department_id' name='department[id]' value='<?= $department::nextVal()  ?>'>
-
 			<?php }?>
 			<span class='help-inline'><?= $department->errors('id') ?></span>
 		</div>

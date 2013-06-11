@@ -17,7 +17,8 @@
  		<p><strong>Descrição: </strong><?= $product->getDescription() ?></p>
  		<p><strong>Preço: </strong><?= $product->getPrice() ?></p>
  		<p><strong>Quantidade em Estoque: </strong><?= $product->getStock() ?></p>
- 		<p><strong>Departamento: </strong><?= $product->getDepartment_Id() ?></p>
+ 		<p><strong>Departamento: </strong><?= Product::findByDepartment($product->getDepartment_Id()); ?></p>
  		<p><strong>Destaque: </strong><?= boolean_convert($product->getFeactured()) ?></p>
+ 		<p><strong>Photo:</strong><?= $product->getPhotoName(); ?></p>
  		</article>
  </section>

@@ -6,7 +6,7 @@ class Product extends Base {
 	private $price;
 	private $stock;
 	private $feactured;
-	private $departmentId;
+	private $department_id;
 	private $photo;
 	private $photoName;
 
@@ -72,12 +72,12 @@ class Product extends Base {
 		return $this->feactured == 't';
 	}
 
-	public function setDepartment_Id($departmentId) {
-		$this->departmentId = $departmentId;
+	public function setDepartment_Id($department_id) {
+		$this->department_id = $department_id;
 	}
 
 	public function getDepartment_Id() {
-		return $this->departmentId;
+		return $this->department_id;
 	}
 
 	public function validates() {
@@ -85,7 +85,6 @@ class Product extends Base {
 		Validations::notEmpty($this->description, 'description', $this->errors);
 		Validations::notEmpty($this->price, 'price', $this->errors);
 		Validations::notEmpty($this->stock, 'stock', $this->errors);
-		Validations::notEmpty($this->departmentId, 'departmentId', $this->errors);
 		
 		/* se a foto existir e não for valida */
 		if ($this->photo && $this->photo->hasImage() && !$this->photo->isValid()) {
@@ -123,6 +122,25 @@ class Product extends Base {
 		return null;
 	}
 
+	public static function findByDepartment($id) {
+		$db_conn = Database::getConnection();
+		$sql = "select name from departments where id = $1;";
+		$params = array($id);
+		$resp = pg_query_params($db_conn, $sql, $params);
+
+		if (!$resp) { pg_close($db_conn); return null; }
+
+		if ($row = pg_fetch_assoc($resp)) {
+			$department = new Department($row);
+			pg_close($db_conn);
+			//print_r($department);
+			return $department->getName();
+		}
+
+		pg_close($db_conn);
+		return null;
+	}
+
 	public function delete() {
 		$db_conn = Database::getConnection();
 		$params = array($this->id);
@@ -144,8 +162,8 @@ class Product extends Base {
 
     	$this->photoName = $this->photo->getName();
 
-    	$sql = "INSERT INTO products (name, description, photoname, price, feactured, stock, createdAt, department_id) values ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING ID;";
-		$params = array($this->name, $this->description,  $this->photoName, $this->price, $this->feactured, $this->stock, $this->createdAt, $this->departmentId);
+    	$sql = "INSERT INTO products (name, description, photoName, price, feactured, stock, createdAt, department_id) values ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING ID;";
+		$params = array($this->name, $this->description,  $this->photoName, $this->price, $this->feactured, $this->stock, $this->createdAt, $this->department_id);
 		$db_conn = Database::getConnection();
 		$resp = pg_query_params($db_conn, $sql, $params);
 
@@ -159,6 +177,27 @@ class Product extends Base {
     	pg_close($db_conn);
     	return true;
     }
+
+    public function update() {
+		if (!$this->isValid()) return false;
+		
+		$db_conn = Database::getConnection();
+		$params = array($this->name, $this->description,  $this->photoName, $this->price, $this->feactured, $this->stock, $this->department_id, $this->id);
+		$sql = "UPDATE products SET name=$1, description=$2, photoName=$3, price=$4, feactured=$5, stock=$6, department_id=$7 WHERE id = $8";
+
+		$resp = pg_query_params($db_conn, $sql, $params);
+		pg_close($db_conn);
+		return $resp;
+	}
+
+	public static function nextVal(){
+		$sql = "select max(id) from products";
+		$resp = pg_query(Database::getConnection(), $sql);
+		
+		$result = pg_fetch_assoc($resp);
+		$result = $result['max'] + 1;
+		return $result;
+	}
 
 }
 ?>

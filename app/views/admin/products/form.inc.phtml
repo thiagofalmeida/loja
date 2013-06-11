@@ -3,9 +3,13 @@
 	<div class="control-group <?= $product->errors('id') ? 'error' : '' ?>" >
 		<label class='control-label' for='product_id'>Código *</label>
 		<div class="controls">
-		
-
-				<input type='text' id='product_id' name='product[id]' value='<?= $product->getId() ?>'>
+			<?php if ($submit == 'Atualizar Produto') { ?>
+				<input type='text' id='department_id' name='product[id]' value='<?= $product->getId() ?>' disabled>
+				<input type='hidden' id='department_id' name='product[id]' value='<?= $product->getId() ?>'>
+			<?php } else { ?>
+				<input type='text' id='department_id' name='product[id]' value='<?= $product::nextVal() ?>' disabled>
+				<input type='hidden' id='department_id' name='product[id]' value='<?= $product::nextVal()  ?>'>
+			<?php } ?>
 			<span class='help-inline'><?= $product->errors('id') ?></span>
 		</div>
 	</div>
@@ -52,17 +56,15 @@
 		</div>
 	</div>
 
-	<div class="control-group <?= $product->errors('departmentId') ? 'error' : '' ?>" >
+	<div class="control-group <?= $product->errors('department_id') ? 'error' : '' ?>" >
 		<label class='control-label' for='product_department'>Departamento *</label>
 		<div class="controls">
 			<select name="department" id="">
-			<?php 
-
-			foreach ($departments as $department) { ?>
-				<option value="<?= $department->getId(); ?>"><?= $department->getName() ?></option>
-			<?php }?>
+				<?php foreach ($departments as $department) { ?>
+					<option value="<?= $department->getId(); ?>"><?= $department->getName() ?></option>
+				<?php }?>
 			</select>
-			<span class='help-inline'> <?= @$product->errors('departmentId')?>
+			<span class='help-inline'> <?= @$product->errors('department_id')?>
 			</span>
 		</div>
 	</div>

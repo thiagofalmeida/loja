@@ -24,6 +24,18 @@
 			$this->render(array('view' => 'admin/products/show.phtml', 'product' => $product));
 		}
 
+		public function edit($id){
+			$product = \Product::findById($id);
+			$department = \Department::getAll();
+
+			if ($product === null) {
+				flash('error', 'Produto não encontrado');
+				redirect_to('/');
+			}
+
+			$this->render(array('view' => 'admin/products/edit.phtml', 'product' => $product, 'departments' => $department));
+		}
+
 		function destroy($id){
 			$product = \Product::findById($id);
 			$product->delete();
@@ -56,17 +68,19 @@
 			$product->setStock($_POST['product']['stock']);
 			$product->setFeactured(isset($_POST['product']['feactured']) ? 't' : 'f');
 			$product->setPrice($_POST['product']['price']);
-			$product->setDepartmentId($_POST['product']['departmentId']);
+			$product->setDepartment_Id($_POST['department']);
 		
 			$photo = new \Photo($_FILES['product_photo'], 'products');
 			$product->setPhoto($photo);
+
+			$department = \Department::getAll();
 
 			if ($product->update()) {
 				flash('success', 'Produto atualizado com sucesso!');
 				redirect_to("/admin/produtos/{$product->getId()}");
 			}else{
 				flash('error', 'Existe dados incorretos no seu formulário!');
-				$this->render(array('view' => 'admin/products/edit.phtml', 'product' => $product));
+				$this->render(array('view' => 'admin/products/edit.phtml', 'product' => $product, 'departments' => $department));
 			}
 		}
 	}

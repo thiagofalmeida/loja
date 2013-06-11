@@ -29,7 +29,7 @@
                     <td><?= $product->getDescription(); ?></td>
                     <td><?= $product->getPrice(); ?></td>
                     <td><?= $product->getStock(); ?></td>
-                    <td><?= $product->getDepartment_Id(); ?></td>
+                    <td><?= Product::findByDepartment($product->getDepartment_Id()); ?></td>
                     <td><?= boolean_convert($product->getFeactured()); ?></td>
                     <td class='options'>
                         <ul>
