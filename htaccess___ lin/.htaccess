@@ -1,0 +1,69 @@
+# not allow access as directory
+Options -Indexes
+
+#Display errors
+php_flag display_errors on
+
+# Logger Options
+php_flag display_startup_errors on
+php_flag html_errors on
+php_flag log_errors on
+php_value error_log  /var/www/html/loja/logs/PHP_errors.log
+
+# Friendly Urls
+
+RewriteEngine On
+#Ativa o suporte à reescrita de URL. Isso significa que as URL poderão ser direcionadas para um determinado arquivo no apache.
+RewriteBase /loja/
+#Diretório base para sobreescrições
+
+RewriteCond %{REQUEST_FILENAME} !-f
+# Não aplica a condição para arquivos que existam. Isso significa que as imagens, CSS, JS e outros arquivos que já existem continuarão funcionando perfeitamente.
+
+RewriteRule ^$ config/routers.php [L]
+#Arquivo para onde deve ser direcionado as requisições. Isso significa que tudo que for digitado no browser, após a pasta que esta este .htacces e que não exista, será direcionado para o arquivo index.php.
+
+# Necessário duas configurações por causa dos endereços com / e sem /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#Não aplica a condição para diretórios que existam
+
+RewriteRule .(/)?$ config/routers.php
+
+#############################################################################
+# DESCRIPTION
+#ErrorDocument 404 /caminho/para/errors/404.html
+#ErrorDocument 403 /caminho/para/errors/403.html
+
+# Options +FollowSymLinks
+# must be enabled for any rules to work, this is a security requirement of the rewrite engine.
+
+# RewriteCond %{REQUEST_FILENAME} !-d
+# If the request is for a real directory
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# If the request is for a file that exists already on the server
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# This line excludes all URLs pointing to existed files from been added with trailing slash again
+
+# RewriteEngine On  Habilita a rescrita da url
+# RewriteCond define uma condição para reescrita de uma url
+#
+# [OR] (OR next condition)
+# Used to combinate rule conditions with a OR.
+#
+# [NC] (No Case)
+# This makes the condition pattern case insensitive, no difference between 'A-Z' and 'a-z'.
+#
+# RewriteRule
+# The RewriteRule directive is the real rewriting
+# RewriteRule pattern substitution [flags]
+#
+# [L] (last rule)
+# Forces the rewriting processing to stop here and don't apply any more rewriting rules.
+# http://www.widexl.com/tutorials/mod_rewrite.html
+# http://enarion.net/web/htaccess/trailing-slash/
+
+# REQUEST_URI
+# The path component of the requested URI, such as "/index.html". This notably excludes the query string which is available as as its own variable named QUERY_STRING.
