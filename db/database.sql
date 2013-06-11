@@ -1,3 +1,9 @@
+\c postgres
+
+DROP DATABASE IF EXISTS store;
+
+CREATE DATABASE store;
+
 CREATE TABLE users (
    id SERIAL PRIMARY KEY,
    email VARCHAR(50) NOT NULL UNIQUE,
@@ -49,7 +55,7 @@ CREATE TABLE products (
    description VARCHAR(50) NOT NULL,
    name VARCHAR(50) NOT NULL,
    price MONEY NOT NULL,              
-   featured BOOLEAN DEFAULT FALSE NOT NULL,
+   feactured BOOLEAN DEFAULT FALSE NOT NULL,
    stock INTEGER NOT NULL,
    createdAt TIMESTAMP,
    photoName VARCHAR(100) NOT NULL,
