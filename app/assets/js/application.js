@@ -26,11 +26,10 @@ jQuery(function($) {
     $('#user_cep').mask('99999-999');
    	$('#company_phone').mask('(99)9999-9999');
     $('#company_cnpj').mask('99.999.999/9999-99');
-   	 
 });
 
 $(document).ready(function() {
-   data_confirm();
+   //data_confirm();
 
    $(this).scroll(function() {
       if ($(this).scrollTop() > 130){
