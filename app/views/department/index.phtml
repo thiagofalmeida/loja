@@ -1,0 +1,30 @@
+<section>
+	<header class="page-header">
+		<h1>Lista de Produtos</h1>
+	</header>
+
+	<article>
+		<?php echo sizeof($products) ?>
+		
+		<div class="row" id="items">
+		<?php 
+		$i=1;
+		foreach ($products as $product) {
+			if ($i % 5 == 0) {?>
+		<div class="row" id="items">
+			<?php } ?>
+		<div class="span3">
+						<div class="thumb">   <?=  image_tag('products','thumb', $product->getPhotoName(),$product->getName()) ?></div>
+					</div>	
+		<?php
+		if ($i % 4 == 0) {?>
+		</div>
+		<?php } 
+
+		$i++;
+		}
+		?>	
+
+	</article>
+
+</section>

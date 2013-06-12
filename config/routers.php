@@ -126,12 +126,27 @@
             }
         break;
 
+		case 'categoria':
+			switch ($url->numberOfParams()) {
+				case 1:
+					$controller = new HomeController();
+            		$controller->index();
+                case 2:
+                    $controller = new DepartmentController();
+                    $controller->index($url->params(1));
+                	break;
+                default:
+                    page_not_found();
+            }
+        break;
+			
+
         case 'produtos':
             switch ($url->numberOfParams()) {
                 case 1:
                     $controller = new ProductsController();
                     $controller->index();
-                break;
+                	break;
                 default:
                     page_not_found();
             }

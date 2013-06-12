@@ -124,21 +124,21 @@ class Product extends Base {
 
 	public static function findByDepartment($id) {
 		$db_conn = Database::getConnection();
-		$sql = "select name from departments where id = $1;";
+		$sql = "select * from products where department_id = $1;";
 		$params = array($id);
 		$resp = pg_query_params($db_conn, $sql, $params);
 
 		if (!$resp) { pg_close($db_conn); return null; }
+		
+		$products = array();
 
-		if ($row = pg_fetch_assoc($resp)) {
-			$department = new Department($row);
-			pg_close($db_conn);
-			//print_r($department);
-			return $department->getName();
-		}
+      	while ($row = pg_fetch_assoc($resp)) {
+       		$products[] = new Product($row);
+      	}
+		
 
 		pg_close($db_conn);
-		return null;
+		return $products;
 	}
 
 	public function delete() {
