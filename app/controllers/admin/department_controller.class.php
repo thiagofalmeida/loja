@@ -48,9 +48,12 @@
 
 		public function destroy($id){
 			$department = \Department::findById($id);
-			$department->delete();
-			flash('success', 'Departamento deletado com sucesso!');
-			redirect_to("/admin/departamentos");
+			if ($department->delete())
+				flash('success', 'Departamento deletado com sucesso!');
+				
+			else
+				flash('error', 'Não é possível remover esse registro!!');
+			redirect_to("/admin/departamentos");	
 		}
 
 		public function save($id){

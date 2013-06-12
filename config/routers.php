@@ -130,7 +130,7 @@
             switch ($url->numberOfParams()) {
                 case 1:
                     $controller = new ProductsController();
-                    $controller->show();
+                    $controller->index();
                 break;
                 default:
                     page_not_found();

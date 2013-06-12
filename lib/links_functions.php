@@ -33,8 +33,11 @@
     }
   }
 
-  function image_tag($for, $type, $file){
-    return '<img src="' . SITE_ROOT . '/app/assets/img/photos/' . $for . '/' . $type . '/' . $file . '" alt="' . $file . '" />';
+  function image_link($for, $type, $file){
+  	return  SITE_ROOT . '/app/assets/img/photos/' . $for . '/' . $type . '/' . $file;
+  }
+  function image_tag($for, $type, $file, $name){
+    return '<img src="' . SITE_ROOT . '/app/assets/img/photos/' . $for . '/' . $type . '/' . $file . '" alt="' . $name . '" />';
   }
 
     /*=================================================*/

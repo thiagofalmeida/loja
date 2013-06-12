@@ -1,4 +1,4 @@
-function search_address() {
+/*function search_address() {
 	// Se o campo CEP não estiver vazio
 	if($.trim($("#user_cep").val()) !== "") { 
 	  	$.getScript("http://republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#user_cep").val(), function(){
@@ -27,7 +27,7 @@ jQuery(function($) {
    	$('#company_phone').mask('(99)9999-9999');
     $('#company_cnpj').mask('99.999.999/9999-99');
 });
-
+*/
 $(document).ready(function() {
    //data_confirm();
 
@@ -38,4 +38,7 @@ $(document).ready(function() {
         $('.sidebar-nav').removeClass('sidebar-nav-fixed');
       }
    });
+   
+   
+  $('#gallery a').lightBox({fixedNavigation:true}); 
 });

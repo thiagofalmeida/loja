@@ -82,8 +82,15 @@
       return $this->getPath('original');
     }
 
+	public function getPathToThumb() {
+		return $this->getPath('thumb');	
+		
+	}
+	
     public function saveToDisc() {
       move_uploaded_file($this->tmp_name, $this->getPathToOriginal());
+	  require 'wideimage/WideImage.php';
+	  WideImage::load($this->getPathToOriginal())->resize(50,50)->saveToFile($this->getPathToThumb());
     }
 
     private function getPath($type) {
@@ -102,6 +109,7 @@
     public function delete() {
       if ($this->name != Photo::DEFAULT_IMAGE) {
         unlink($this->getPathToOriginal());
+		unlink($this->getPathToThumb());
       }
     }
 
