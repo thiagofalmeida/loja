@@ -131,9 +131,11 @@
 				case 1:
 					$controller = new HomeController();
             		$controller->index();
-                case 2:
-                    $controller = new DepartmentController();
-                    $controller->index($url->params(1));
+                case 2;
+				case 3;
+                    $controller = new ProductsController();
+					$id=$url->params(1);
+                    $controller->category($id);
                 	break;
                 default:
                     page_not_found();
@@ -145,8 +147,12 @@
             switch ($url->numberOfParams()) {
                 case 1:
                     $controller = new ProductsController();
-                    $controller->index();
+                    $controller->index(12,1);
                 	break;
+				case 2;
+					$controller = new ProductsController();
+                    $controller->index(12,1);
+					break;
                 default:
                     page_not_found();
             }

@@ -2,6 +2,7 @@
   define('APP_NAME', 'loja' );
   define('SITE_ROOT', '/loja' ); # com barras
   define('APP_ROOT_FOLDER', $_SERVER['DOCUMENT_ROOT'] . '' . SITE_ROOT );
+  define('QNT_PROD', 3);
 
   define('ASSETS_FOLDER', SITE_ROOT .  '/app/assets');
   define('LOG_FILE', APP_ROOT_FOLDER .  '/logs/logger.log');

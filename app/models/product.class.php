@@ -103,6 +103,21 @@ class Product extends Base {
 
       	return $products;
     }
+	
+	public static function getAllByPage($qnt, $pageNum) {
+		$db_conn = Database::getConnection();
+		$sql = "select * from products limit $1 offset $2;";
+		$inicial=($pageNum-1) * $qnt;
+		$params=array($qnt,$inicial);
+      	$resp = pg_query_params($db_conn, $sql, $params);
+      	$products = array();
+
+      	while ($row = pg_fetch_assoc($resp)) {
+       		$products[] = new Product($row);
+      	}
+
+      	return $products;	
+	}
 
     public static function findById($id){
 		$db_conn = Database::getConnection();
@@ -124,8 +139,22 @@ class Product extends Base {
 
 	public static function findByDepartment($id) {
 		$db_conn = Database::getConnection();
-		$sql = "select * from products where department_id = $1;";
+		// PEGANDO QUANTIDADE DE REGISTROS
+		$sql_qnt="select * from products where department_id = $1";
 		$params = array($id);
+		$resp=pg_query_params($db_conn, $sql_qnt, $params);
+		$numRows=pg_num_rows($resp);
+		
+		// SQL COM PAGINACAO
+		$sql = "select * from products where department_id = $1 limit $2 offset $3;";
+		
+		// QUANTIDADE DE REGISTROS PERMITIDOS
+		$pageNum=1;
+		if (isset($_GET['pagina'])) {
+			$pageNum=$_GET['pagina'];
+		}
+		$inicial=($pageNum-1) * QNT_PROD;
+		$params = array($id, QNT_PROD, $inicial);
 		$resp = pg_query_params($db_conn, $sql, $params);
 
 		if (!$resp) { pg_close($db_conn); return null; }
@@ -138,7 +167,8 @@ class Product extends Base {
 		
 
 		pg_close($db_conn);
-		return $products;
+		$ret = array('products'=>$products,'numRows' => $numRows);
+		return $ret;
 	}
 
 	public function delete() {
