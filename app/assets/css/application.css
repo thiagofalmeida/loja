@@ -211,3 +211,56 @@ article#gallows {
   margin-left: 31px;
   padding-bottom: 35px
 }
+
+.show-product {
+  height: 260px;
+}
+
+.show-image {
+  width: 250px;
+}
+
+.price-tag {
+  font-size: 35px;
+  color: orangered;
+}
+
+.description-tag {
+  font-size: 30px;
+  color: orangered;
+}
+
+.price {
+  position: relative;
+  top: -29px;
+  font-size: 30px;
+  left: 76px;
+  width: 173px
+}
+
+.description {
+  position: relative;
+  font-size: 28px;
+  top: -30px;
+  left: 153px;
+}
+
+.show-info {
+  position: relative;
+  top: -154px;
+  left: 310px;
+  width: 312px;
+}
+
+.show-btn {
+  position: relative;
+  top: -261px;
+  left: 809px;
+  width: 175px;
+}
+
+.add-cart {
+  position: relative;
+  right: 16px;
+  padding-bottom: 8px;
+}

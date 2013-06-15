@@ -37,7 +37,7 @@
                     $controller->index();
                 break;
 
-                 case 'produtos':
+                case 'produtos':
                    $controller = new Admin\ProductController();
                    resources($controller, $url->paramsAfter(2));
                 break;
@@ -127,11 +127,14 @@
         break;
 
         case 'produtos':
-            switch ($url->numberOfParams()) {
-                case 1:
+            switch ($url->params(1)) {
+                case '':
                     $controller = new ProductsController();
                     $controller->index();
                 break;
+                case 'detalhes':
+                    $controller = new ProductsController();
+                    $controller->details();
                 default:
                     page_not_found();
             }

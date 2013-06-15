@@ -1,7 +1,7 @@
 <?php
   class Photo extends Base {
 
-    const DEFAULT_IMAGE = 'default.jpeg';
+    const DEFAULT_IMAGE = 'default.jpg';
     private $name = Photo::DEFAULT_IMAGE;
     private $size;
     private $type;
@@ -82,15 +82,19 @@
       return $this->getPath('original');
     }
 
-	public function getPathToThumb() {
-		return $this->getPath('thumb');	
-		
-	}
+	  public function getPathToThumb() {
+		  return $this->getPath('thumb');
+	  }
+
+    public function getPathToDetail() {
+      return $this->getPath('detail');
+    }
 	
     public function saveToDisc() {
       move_uploaded_file($this->tmp_name, $this->getPathToOriginal());
-	  require 'wideimage/WideImage.php';
-	  WideImage::load($this->getPathToOriginal())->resize(50,50)->saveToFile($this->getPathToThumb());
+	    require 'wideimage/WideImage.php';
+	    WideImage::load($this->getPathToOriginal())->resize(100,70)->saveToFile($this->getPathToThumb());
+      WideImage::load($this->getPathToOriginal())->resize(250,200)->saveToFile($this->getPathToDetail());
     }
 
     private function getPath($type) {
@@ -109,7 +113,7 @@
     public function delete() {
       if ($this->name != Photo::DEFAULT_IMAGE) {
         unlink($this->getPathToOriginal());
-		unlink($this->getPathToThumb());
+		    unlink($this->getPathToThumb());
       }
     }
 
@@ -133,6 +137,5 @@
       pg_close($db_conn);
       return $resp;
     }
-
   }
 ?>
