@@ -4,7 +4,7 @@
 	class ProductController extends \BaseController {
 
   		function index() {
-			$product = \Product::getAll();
+			$product = \Product::getAll();	
 			$this->render(array('view' => 'admin/products/index.phtml','products' => $product));
 		}
 

@@ -126,15 +126,41 @@
             }
         break;
 
+		case 'categoria':
+			switch ($url->numberOfParams()) {
+				case 1:
+					$controller = new HomeController();
+            		$controller->index();
+                case 2;
+				case 3;
+                    $controller = new ProductsController();
+					$id=$url->params(1);
+                    $controller->category($id);
+                	break;
+                default:
+                    page_not_found();
+            }
+        break;
+			
+
         case 'produtos':
             switch ($url->params(1)) {
                 case '':
                     $controller = new ProductsController();
+<<<<<<< HEAD
                     $controller->index();
                 break;
                 case 'detalhes':
                     $controller = new ProductsController();
                     $controller->details();
+=======
+                    $controller->index(12,1);
+                	break;
+				case 2;
+					$controller = new ProductsController();
+                    $controller->index(12,1);
+					break;
+>>>>>>> 4a2c7dbcf665f2b6970f803f511d403e5076e772
                 default:
                     page_not_found();
             }
