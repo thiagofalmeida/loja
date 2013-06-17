@@ -151,12 +151,8 @@
                     $controller->index();
                 break;
                 case 2:
-                    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-                        $controller = new CartController();
-                        $controller->add($url->params(1));
-                    } else {
-                        echo 'nao deu';
-                    }
+                    $controller = new CartController();
+                    $controller->add($url->params(1));
                 break;  
                 default:
                     page_not_found();

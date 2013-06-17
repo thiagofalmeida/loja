@@ -26,8 +26,6 @@
 		function category($id) {
 			$ret= Product::findByDepartment($id);
 			extract($ret);
-			echo $numRows;
-			
 			$this->render(array('view' => 'products/index.phtml', 'products' => $products, 'numRows' => $numRows));
 		}
 	}

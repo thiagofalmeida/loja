@@ -12,8 +12,14 @@ class Cart {
 		if ($this->exist($id)) {
 			$qnt = $_COOKIE["cart"][$id] + 1;
 			setcookie("cart[{$id}]", $qnt, time() + 3600 * 48);
-		} else
+			return true;
+		} else {
 			setcookie("cart[{$id}]", 1, time() + 3600 * 48);
+			return true;
+			
+		}
+		return false;
+			
 	}
 
 	public static function getItemsOnCart() {
