@@ -1,0 +1,37 @@
+<section>
+    <header class='page-header'>
+        <div class='clearfix'>
+            <span class='left'><h3> Carrinho </h3></span>
+        </div>
+    </header>
+
+    <article>
+        <table class='table table-bordered table-striped'>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Quantidade</th>
+                    <th>Nome</th>
+                    <th>Valor Unitario</th>
+                    <th>Total</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (isset($_COOKIE['cart'])) {
+                    foreach ($_COOKIE['cart'] as $key => $value) {
+                        $total += $value * $cart->getPrice($key);
+                ?>
+                <tr>
+                    <td><?= $key; ?></td>
+                    <td><?= $cart->getItemName(); ?></td>
+                    <td><input class="text-size" type="text" name="amount[<?= $key; ?>]" value="<?= $value; ?>"/></td>
+                    <td><?= $cart->getPrice(); ?></td>
+                    <td><?= $cart->getPrice() * $value; ?></td>
+                    <td><input type="checkbox" name="remove[]" value="<?= $key; ?>"></td>
+                </tr>
+                <?php }} ?>
+            </tbody>
+        </table>
+    </article>
+</section>

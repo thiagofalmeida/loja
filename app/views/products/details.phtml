@@ -1,0 +1,30 @@
+ <section>
+ 	<header class='page-header'>
+ 		<div class='clearfix'>
+ 			<div class='left'>
+ 				<h2> <?= $product->getName(); ?> </h2>
+ 				<small class='help-block'> Produto cadastrado em <?= $product->getCreatedAt() ?> </small>
+ 			</div>
+ 			<div class='right'>
+ 				<?= link_to('/produtos', 'Todos os produtos')?>
+ 			</div>
+ 		</div>
+ 	</header>
+ 	<article>
+ 		<div class="show-product">
+ 			<div class="show-image">
+ 				<a href="<?= image_link('products', 'original', $product->getPhotoName()) ?>" class="jqzoom">
+ 					<?= image_tag('products','original', $product->getPhotoName(),$product->getName()) ?>
+ 				</a>
+ 			</div>
+ 			<div class="show-info">
+ 				<p class="price-tag">Por:</p><p class="price"> <?= $product->getPrice(); ?></p>
+ 				<p class="description-tag">Descrição:</p><p class="description"> <?= $product->getDescription(); ?></p>
+ 			</div>
+ 			<div class="show-btn">
+ 				<p class="add-cart"><a class="btn btn-info" href="#"> Adicionar ao carrinho </a></p>
+ 				<p><a class="btn btn-inverse" href="#"> Fechar a compra </a></p>
+ 			</div>
+ 		</div>
+ 	</article>
+ </section>
