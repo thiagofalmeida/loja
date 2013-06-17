@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= APP_NAME ?></title>
-    <?php stylesheet_include_tag('bootstrap.min.css', 'bootstrap-responsive.min.css','font-awesome.min.css','bootswatch.css', 'jquery.lightbox.css', 'application.css'); ?>
+    <?php stylesheet_include_tag('bootstrap.min.css', 'bootstrap-responsive.min.css','font-awesome.min.css','bootswatch.css', 'jquery.lightbox.css','jquery.jqzoom.css', 'application.css'); ?>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -52,7 +52,7 @@
     </div>
     <div class="show-cart">
       <img src="/loja/app/assets/img/cart.png" alt="carrinho de compras" class="size-cart">
-      <a href="#" class="show-items">0</a>
+      <a href="/loja/carrinho" class="show-items"><?= Cart::getItemsOnCart(); ?></a>
     </div>
     <div class="show-search">
       <form id='files-search-form' class='form-search' action='#' method='GET'>

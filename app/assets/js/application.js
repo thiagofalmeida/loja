@@ -47,4 +47,5 @@ $(document).ready(function() {
   });
 
   $('#gallery a').lightBox({fixedNavigation:true}); 
+  $('.jqzoom').jqzoom({ zoomType : 'reverse' });
 });

@@ -1,40 +1,40 @@
 <section>
-
 	<header class="page-header">
 		<h1>Lista de Produtos</h1>
 	</header>
 	
 	<article>
-		<div class="row" id="items">
-			<?php
-			$i=1;
-			foreach ($products as $product) {
-			if ($i % 5 == 0) {?>
-			<div class="row" id="items">
-			<?php } ?>
-			<div class="span3">
-			<div class="thumb">   <?=  image_tag('products', 'thumb', $product -> getPhotoName(), $product -> getName()) ?></div>
-			</div>
-			<?php
-			if ($i % 4 == 0) {?>
-		</div>
-		<?php }
-		
-			$i++;
-			}
-		?>
-		
-		
-	
+		<div class="container-fluid">
+        	<div class="row-fluid">
+            <?php $i = 0; ?>
+            <?php foreach($products as $product) {
+                if (($i % 3) == 0) {?>
+                <ul class="thumbnails">
+                    <?php } ?>
+                    <li class="span4">
+                        <div id="list" class="thumbnail">
+                            <?=  image_tag('products', 'list', $product->getPhotoName(), $product->getName()) ?>
+                            <h5><?= $product->getName(); ?></h5>
+                            <h6><?= $product->getPrice(); ?></h6>
+                            <?= button_to("/carrinho/{$product->getId()}", 'Add ao carrinho', 'btn btn-primary btn-small')?>
+                            <?= button_to("/carrinho/{$product->getId()}/fechar", 'Fechar a compra', 'btn btn-small')?>                         
+                        </div>
+                    </li>
+                    <?php $i++;
+                    if (($i % 3) == 0) { ?>
+                </ul>
+                <?php } } ?>
+        	</div>
+    	</div>
 	</article>
+
 	<article>
-		<div class="paginacao">
+		<?php /*
+        <div class="paginacao">
 			<?php
-				$numPages=$numRows % QNT_PROD;
-				for ($i = 1; $i <= $numPages; $i++) {
-					echo link_to("?pagina=$i", $i);
-				}
+				$numPages = @$numRows % QNT_PROD;
+				for ($i = 1; $i <= $numPages; $i++) { echo link_to("?pagina=$i", $i); } 
 			?>
-		</div>
+		</div> */?>
 	</article>
 </section>

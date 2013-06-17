@@ -17,6 +17,14 @@
     return "<a href='{$link}' {$options}> $name </a>";
   }
 
+  function button_to($path, $name, $class = '') {
+    if (substr($path, 0, 1) == '/')
+       $link = SITE_ROOT . $path;
+     else
+       $link = $path;
+    return "<a href='{$link}' class='{$class}'> $name </a>";
+  }  
+
   function stylesheet_include_tag() {
      $params = func_get_args();
      foreach($params as $param){
@@ -36,6 +44,7 @@
   function image_link($for, $type, $file){
   	return  SITE_ROOT . '/app/assets/img/photos/' . $for . '/' . $type . '/' . $file;
   }
+  
   function image_tag($for, $type, $file, $name){
     return '<img src="' . SITE_ROOT . '/app/assets/img/photos/' . $for . '/' . $type . '/' . $file . '" alt="' . $name . '" />';
   }

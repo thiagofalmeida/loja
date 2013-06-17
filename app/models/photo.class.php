@@ -89,12 +89,18 @@
     public function getPathToDetail() {
       return $this->getPath('detail');
     }
+
+    public function getPathToList() {
+      return $this->getPath('list');
+    }
 	
     public function saveToDisc() {
       move_uploaded_file($this->tmp_name, $this->getPathToOriginal());
 	    require 'wideimage/WideImage.php';
+      WideImage::load($this->getPathToOriginal())->resize(500,500)->saveToFile($this->getPathToOriginal());
 	    WideImage::load($this->getPathToOriginal())->resize(100,70)->saveToFile($this->getPathToThumb());
       WideImage::load($this->getPathToOriginal())->resize(250,200)->saveToFile($this->getPathToDetail());
+      WideImage::load($this->getPathToOriginal())->resize(150,150)->saveToFile($this->getPathToList());
     }
 
     private function getPath($type) {
@@ -114,6 +120,8 @@
       if ($this->name != Photo::DEFAULT_IMAGE) {
         unlink($this->getPathToOriginal());
 		    unlink($this->getPathToThumb());
+        unlink($this->getPathToList());
+        unlink($this->getPathToDetail());
       }
     }
 

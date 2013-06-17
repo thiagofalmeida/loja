@@ -98,6 +98,7 @@
                 case 1:
                     $controller = new UsersController();
                     $controller->start();
+
                 case 2:
                     if ($url->params(1) == 'pessoa'){
                         if ($_POST['user'] == 'common'){
@@ -126,41 +127,56 @@
             }
         break;
 
-		case 'categoria':
-			switch ($url->numberOfParams()) {
-				case 1:
-					$controller = new HomeController();
-            		$controller->index();
+        case 'categoria':
+            switch ($url->numberOfParams()) {
+                case 1:
+                    $controller = new HomeController();
+                    $controller->index();
                 case 2;
-				case 3;
+                case 3;
                     $controller = new ProductsController();
-					$id=$url->params(1);
+                    $id = $url->params(1);
                     $controller->category($id);
-                	break;
+                    break;
                 default:
                     page_not_found();
             }
         break;
-			
+
+        case 'carrinho':
+            switch ($url->numberOfParams()) {
+                case 1:
+                    $controller = new CartController();
+                    $controller->index();
+                break;
+                case 2:
+                    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                        $controller = new CartController();
+                        $controller->add($url->params(1));
+                    } else {
+                        echo 'nao deu';
+                    }
+                break;  
+                default:
+                    page_not_found();
+            }
+        break;  
 
         case 'produtos':
             switch ($url->params(1)) {
                 case '':
                     $controller = new ProductsController();
-<<<<<<< HEAD
                     $controller->index();
                 break;
                 case 'detalhes':
                     $controller = new ProductsController();
                     $controller->details();
-=======
                     $controller->index(12,1);
-                	break;
-				case 2;
-					$controller = new ProductsController();
+                    break;
+                case 2;
+                    $controller = new ProductsController();
                     $controller->index(12,1);
-					break;
->>>>>>> 4a2c7dbcf665f2b6970f803f511d403e5076e772
+                    break;
                 default:
                     page_not_found();
             }

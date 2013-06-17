@@ -80,6 +80,18 @@ class Product extends Base {
 		return $this->department_id;
 	}
 
+	public static function getFeacturedProducts(){
+		$sql = "select * from products where feactured = 't';";
+      	$resp = pg_query(Database::getConnection(), $sql);
+      	$products = array();
+
+      	while ($row = pg_fetch_assoc($resp)) {
+       		$products[] = new Product($row);
+      	}
+
+      	return $products;
+	}
+
 	public function validates() {
 		Validations::notEmpty($this->name, 'name', $this->errors);
 		Validations::notEmpty($this->description, 'description', $this->errors);
@@ -137,23 +149,43 @@ class Product extends Base {
 		return null;
 	}
 
+	public static function getDepartmentName($id) {
+		$db_conn = Database::getConnection();
+		$sql = "select name from departments where id = $1;";
+		$params = array($id);
+		$resp = pg_query_params($db_conn, $sql, $params);
+
+		if (!$resp) { pg_close($db_conn); return null; }
+
+		if ($row = pg_fetch_assoc($resp)) {
+			$department = new Department($row);
+			pg_close($db_conn);
+			return $department->getName();
+		}
+
+		pg_close($db_conn);
+		return null;
+	}
+
 	public static function findByDepartment($id) {
 		$db_conn = Database::getConnection();
 		// PEGANDO QUANTIDADE DE REGISTROS
-		$sql_qnt="select * from products where department_id = $1";
+		$sql_qnt = "select * from products where department_id = $1";
 		$params = array($id);
-		$resp=pg_query_params($db_conn, $sql_qnt, $params);
-		$numRows=pg_num_rows($resp);
+		$resp = pg_query_params($db_conn, $sql_qnt, $params);
+		$numRows = pg_num_rows($resp);
 		
 		// SQL COM PAGINACAO
 		$sql = "select * from products where department_id = $1 limit $2 offset $3;";
 		
 		// QUANTIDADE DE REGISTROS PERMITIDOS
-		$pageNum=1;
+		$pageNum = 1;
+		
 		if (isset($_GET['pagina'])) {
 			$pageNum=$_GET['pagina'];
 		}
-		$inicial=($pageNum-1) * QNT_PROD;
+
+		$inicial = ($pageNum-1) * QNT_PROD;
 		$params = array($id, QNT_PROD, $inicial);
 		$resp = pg_query_params($db_conn, $sql, $params);
 
@@ -167,7 +199,7 @@ class Product extends Base {
 		
 
 		pg_close($db_conn);
-		$ret = array('products'=>$products,'numRows' => $numRows);
+		$ret = array('products' => $products, 'numRows' => $numRows);
 		return $ret;
 	}
 

@@ -17,11 +17,13 @@
  		<p><strong>Descrição: </strong><?= $product->getDescription() ?></p>
  		<p><strong>Preço: </strong><?= $product->getPrice() ?></p>
  		<p><strong>Quantidade em Estoque: </strong><?= $product->getStock() ?></p>
- 		<p><strong>Departamento: </strong><?= Product::findByDepartment($product->getDepartment_Id()); ?></p>
+ 		<p><strong>Departamento: </strong><?= Product::getDepartmentName($product->getDepartment_Id()); ?></p>
  		<p><strong>Destaque: </strong><?= boolean_convert($product->getFeactured()) ?></p>
  		<div id="gallery">
  			<p><strong>Imagem: </strong></p>
- 			<p><a href="<?= image_link('products', 'original', $product->getPhotoName()) ?>"><?=  image_tag('products','thumb', $product->getPhotoName(),$product->getName())  ?></a></p>
+ 			<p>
+ 				<a href="<?= image_link('products', 'original', $product->getPhotoName()) ?>"><?=  image_tag('products','detail', $product->getPhotoName(),$product->getName())  ?></a>
+ 			</p>
  		</div>
  	</article>
  </section>

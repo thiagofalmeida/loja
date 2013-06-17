@@ -264,3 +264,18 @@ article#gallows {
   right: 16px;
   padding-bottom: 8px;
 }
+
+.show-index-prod {
+  position: relative;
+  bottom: 215px;
+  right: -18px;
+}
+
+#list {
+   margin: 0;
+   text-align: center;
+   border: transparent;
+   max-width: 250px;
+   max-height: 390px;
+   padding: 20px;
+}

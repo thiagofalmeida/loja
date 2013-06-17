@@ -1,14 +1,13 @@
 <?php
 	class ProductsController extends BaseController {
 		
-<<<<<<< HEAD
-		function index() {
+		/*unction index() {
 			$products= Product::getAll();
     		$this->render(array('view' => 'products/index.phtml', 'products' => $products));
-  		}
+  		}*/
 
   		function details() {
-			$id = 26;
+			$id = 51;
 			$product = Product::findById($id);
 
 			if ($product === null) {
@@ -18,9 +17,9 @@
 			
 			$this->render(array('view' => 'products/details.phtml', 'product' => $product));
   		}
-=======
+
 		function index (){
-			$products= Product::getAllByPage(5, 1);
+			$products = Product::getAllByPage(5, 1);
     		$this->render(array('view' => 'products/index.phtml', 'products' => $products));
   		}
 		
@@ -30,9 +29,6 @@
 			echo $numRows;
 			
 			$this->render(array('view' => 'products/index.phtml', 'products' => $products, 'numRows' => $numRows));
-			
 		}
->>>>>>> 4a2c7dbcf665f2b6970f803f511d403e5076e772
-	
 	}
 ?>

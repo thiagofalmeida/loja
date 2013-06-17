@@ -1,10 +1,30 @@
 <section>
-  <header class="page-header">
-      <h1>Página Inicial</h1>
-  </header>
-  <article class='well'>
-     <p>
-      Seja Bem-Vindo a loja virtual de orgãos humanos!
-     </p>
-  </article>
+  	<header class="page-header">
+    	<h1>Produtos em destaque</h1>
+    	<small class='help-block'> Seja bem-vindo a Loja Virtual </small>
+  	</header>
+
+  	<article>
+		<div class="container-fluid">
+        	<div class="row-fluid">
+            <?php $i = 0; foreach($products as $product) {
+                if (($i % 3) == 0) {?>
+                <ul class="thumbnails">
+                    <?php } ?>
+                    <li class="span4">
+                        <div id="list" class="thumbnail">
+                            <?=  image_tag('products', 'list', $product->getPhotoName(), $product->getName()) ?>
+                            <h5><?= $product->getName(); ?></h5>
+                            <h6><?= $product->getPrice(); ?></h6>
+                            <a class="btn btn-small btn-primary" href="#">Add ao carrinho</a>
+                            <a class="btn btn-small" href="#">Fechar a compra</a>
+                        </div>
+                    </li>
+                    <?php $i++;
+                    if (($i % 3) == 0) { ?>
+                </ul>
+                <?php } } ?>
+        	</div>
+    	</div>
+	</article>
 </section>
