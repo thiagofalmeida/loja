@@ -135,7 +135,8 @@
                 case 2;
                 case 3;
                     $controller = new ProductsController();
-                    $id = $url->params(1);
+					
+                    $id = (int) $url->params(1);
                     $controller->category($id);
                     break;
                 default:
