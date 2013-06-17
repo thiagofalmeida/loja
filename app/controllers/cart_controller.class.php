@@ -1,7 +1,7 @@
 <?php
 	class CartController  extends BaseController {
 		function index() {
-			$cart = new Cart();
+			$cart = Cart::getProducts();
     		$this->render(array('view' => 'cart/index.phtml', 'cart' => $cart));
   		}
 
