@@ -82,9 +82,8 @@ id SERIAL PRIMARY KEY,
 orderIn DATE NOT NULL,
 status VARCHAR(20) NOT NULL,
 total NUMERIC(10,2) NOT NULL,
-client_id INTEGER, FOREIGN KEY (client_id) REFERENCES clients (id)
+user_id INTEGER, FOREIGN KEY (user_id) REFERENCES users (id)
 );
-
 CREATE TABLE items_orders (
   id SERIAL PRIMARY KEY,
   qnt INTEGER NOT NULL,
