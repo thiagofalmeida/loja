@@ -167,8 +167,13 @@
                     $controller->index();
                 break;
                 case 2:
-                    $controller = new CartController();
-                    $controller->add($url->params(1));
+                    if ($url->params(1) == 'atualizar'){
+                        $controller = new CartController();
+                        $controller->update();
+                    } else {
+                        $controller = new CartController();
+                        $controller->add($url->params(1));
+                    }
                 break;  
                 default:
                     page_not_found();

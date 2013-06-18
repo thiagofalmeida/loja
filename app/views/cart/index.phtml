@@ -1,48 +1,50 @@
-<section>
-    <header class='page-header'>
-        <div class='clearfix'>
-            <span class='left'><h3> Carrinho </h3></span>
-        </div>
-    </header>
+<form action='<?= url_for("/carrinho/atualizar"); ?>' method='POST' novalidate>
+    <section>
+        <header class='page-header'>
+            <div class='clearfix'>
+                <span class='left'><h3> Carrinho </h3></span>
+            </div>
+        </header>
 
-    <article>
-        <table class='table table-bordered table-striped'>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Quantidade</th>
-                    <th>Nome</th>
-                    <th>Valor Unitario</th>
-                    <th>Total</th>
-                    <th>Remover</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                
-                	
-                	
-                	<?php
-                		foreach ($cart as $key => $value) {
-                			$product= Product::findById($key);
-                	?>
-                		<tr>
-							<td><?= $key; ?></td>
-							<td><?= $value ?></td>
-							<td><?= $product->getName() ?></td>
-							<td><?= $product->getPrice() ?></td> 
-							<td><?= $product->getPrice() * $value ?></td>
-							<td><input type="checkbox" name="remove[]" value="{$key}"></td>
-						</tr>
-							
-					<?php		
-                		}
-                	
-                	?>
-                	
-                	
-                </tr>
-            </tbody>
-        </table>
-    </article>
-</section>
+        <article>
+            <table class='table table-bordered table-striped'>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitario</th>
+                        <th>Remover</th>
+                        <th>Total</th>                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        if ($cart != false) {
+                            foreach ($cart as $key => $value) {
+                                $product = Product::findById($key);
+                    ?>
+                    <tr>
+                        <td><?= $key; ?></td>
+                        <td><?= $product->getName() ?></td>
+                        <td><input class="amount-cart" type="text" name="amount[<?= $key; ?>]" value="<?= $value; ?>"></td>
+                        <td><?= $product->getPrice() ?></td> 
+                        <td><input class="remove-cart" type="checkbox" name="remove[]" value="<?= $key; ?>"></td>
+                        <td><?= $product->getPrice() * $value ?></td>
+                    </tr>
+                    <?php }} ?>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td><?='oi' ?></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="button-show">
+                <input type="submit" name="update" value="Atualizar Carrinho" class="btn btn">
+                <div class="button-finish">
+                    <?= button_to("/carrinho/fechar", 'Fechar a compra', 'btn btn-info')?> 
+                </div>
+            </div>
+        </article>
+    </section>
+</form>

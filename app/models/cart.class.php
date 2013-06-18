@@ -16,7 +16,6 @@ class Cart {
 		} else {
 			setcookie("cart[{$id}]", 1, time() + 3600 * 48);
 			return true;
-			
 		}
 		return false;
 	}
@@ -25,7 +24,6 @@ class Cart {
 		if (isset($_COOKIE['cart'])){
 			return sizeof($_COOKIE['cart']);
 		}
-
 		return 0;
 	}
 

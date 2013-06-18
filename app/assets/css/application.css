@@ -153,6 +153,10 @@ article#gallows {
   top: 2px;
   font-size: 25px;
 }
+.show-items:hover {
+  text-decoration: none;
+  color: white;
+}
 
 /* Search
 ---------------------------*/
@@ -278,4 +282,52 @@ article#gallows {
    max-width: 250px;
    max-height: 390px;
    padding: 20px;
+}
+
+/* carrinho de compras 
+-----------------------------*/
+.amount-cart {
+  width: 30px;
+  text-align: center;
+  position: relative;
+  left: 20px;
+  top: 2px;
+}
+
+.remove-cart {
+  position: relative;
+  left: 25px;
+  top: 5px;
+}
+
+.pagination {
+  position: relative;
+  left: 20px;
+  font-size: 23px;
+  padding-bottom: 12px;
+  font-weight: bold;
+}
+
+.page-style {
+  position: relative;
+  border: 1px solid white;
+  padding-left: 12px;
+  padding-right: 10px;
+}
+
+a.page-style:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.button-show {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.button-finish {
+  position: relative;
+  left: 845px;
+  width: 150px;
+  top: -28px;
 }

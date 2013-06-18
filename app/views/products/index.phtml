@@ -2,7 +2,6 @@
 	<header class="page-header">
 		<h1>Lista de Produtos</h1>
 	</header>
-	
 	<article>
 		<div class="container-fluid">
         	<div class="row-fluid">
@@ -27,13 +26,11 @@
         	</div>
     	</div>
 	</article>
-
 	<article>
-		
-        <div class="paginacao">
+        <div class="pagination">
 			<?php
 				$numPages = @$numRows % QNT_PROD;
-				for ($i = 1; $i <= $numPages; $i++) { echo link_to("?pagina=$i", $i); } 
+				for ($i = 1; $i <= $numPages; $i++) { echo button_to("?pagina=$i", $i, "page-style"); }
 			?>
 		</div> 
 	</article>

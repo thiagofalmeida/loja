@@ -95,7 +95,9 @@ class Product extends Base {
 	public function validates() {
 		Validations::notEmpty($this->name, 'name', $this->errors);
 		Validations::notEmpty($this->description, 'description', $this->errors);
+		Validations::notANumber($this->price, 'price', $this->errors);
 		Validations::notEmpty($this->price, 'price', $this->errors);
+		Validations::notANumber($this->stock, 'stock', $this->errors);
 		Validations::notEmpty($this->stock, 'stock', $this->errors);
 		
 		/* se a foto existir e não for valida */

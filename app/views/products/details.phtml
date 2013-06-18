@@ -22,8 +22,8 @@
  				<p class="description-tag">Descrição:</p><p class="description"> <?= $product->getDescription(); ?></p>
  			</div>
  			<div class="show-btn">
- 				<p class="add-cart"><a class="btn btn-info" href="#"> Adicionar ao carrinho </a></p>
- 				<p><a class="btn btn-inverse" href="#"> Fechar a compra </a></p>
+ 				<p class="add-cart"><?= button_to("/carrinho/{$product->getId()}", 'Adicionar ao carrinho', 'btn btn-info')?></p>
+ 				<p><?= button_to("/carrinho/{$product->getId()}/fechar", 'Fechar a compra', 'btn btn-inverse')?></p>
  			</div>
  		</div>
  	</article>

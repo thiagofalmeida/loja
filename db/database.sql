@@ -86,8 +86,9 @@ client_id INTEGER, FOREIGN KEY (client_id) REFERENCES clients (id)
 );
 
 CREATE TABLE items_orders (
-qnt INTEGER NOT NULL,
-product_value NUMERIC(10,2) NOT NULL,
-order_id INTEGER, FOREIGN KEY (order_id) REFERENCES orders (id),
-product_id INTEGER, FOREIGN KEY (product_id) REFERENCES products (id)
+  id SERIAL PRIMARY KEY,
+  qnt INTEGER NOT NULL,
+  product_value NUMERIC(10,2) NOT NULL,
+  order_id INTEGER, FOREIGN KEY (order_id) REFERENCES orders (id),
+  product_id INTEGER, FOREIGN KEY (product_id) REFERENCES products (id)
 );

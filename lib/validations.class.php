@@ -95,5 +95,16 @@ class Validations {
 
     return false;
   }
+
+  public static function notANumber($value, $key = null, &$errors = null) {
+    if (!is_numeric($value)) {
+      if ($key !== null && $errors !== null) {
+        $msg = 'não pode ser letras ou caracteres especiais';
+        $errors[$key] = $msg;
+      }
+      return false;
+    }
+    return true;
+  }
 }
 ?>
