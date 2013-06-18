@@ -11,10 +11,10 @@ class Cart {
 	public function add($id) {
 		if ($this->exist($id)) {
 			$qnt = $_COOKIE["cart"][$id] + 1;
-			setcookie("cart[{$id}]", $qnt, time() + 3600 * 48);
+			setcookie("cart[{$id}]", $qnt, time() + 3600 * 48, '/');
 			return true;
 		} else {
-			setcookie("cart[{$id}]", 1, time() + 3600 * 48);
+			setcookie("cart[{$id}]", 1, time() + 3600 * 48, '/');
 			return true;
 		}
 		return false;
@@ -52,9 +52,9 @@ class Cart {
 
 	public function setItemQuantity($id, $quantity){
 		if ($quantity > 0) {
-			setcookie("cart[{$id}]", $quantity, time() + 3600 * 48);
+			setcookie("cart[{$id}]", $quantity, time() + 3600 * 48 , '/');
 		} else {
-			setcookie("cart[{$id}]", "", time() - 3600 * 48);
+			setcookie("cart[{$id}]", "", time() - 3600 * 48, '/');
 		}
 	}
 }
