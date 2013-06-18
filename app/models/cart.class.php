@@ -30,7 +30,7 @@ class Cart {
 		return 0;
 	}
 
-	public function getProducts() {
+	public static function getProducts() {
 		if (isset($_COOKIE['cart'])) {
 			return $_COOKIE['cart'];
 		}
@@ -45,7 +45,7 @@ class Cart {
 		return $price;
 	}
 
-	public function getItemName($id){
+	public static function getItemName($id){
 		$sql= "SELECT name FROM products WHERE id = '$id';";
 		$result = pg_query($sql);
 		$result = pg_fetch_row($result);
