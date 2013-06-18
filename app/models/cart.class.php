@@ -19,7 +19,6 @@ class Cart {
 			
 		}
 		return false;
-			
 	}
 
 	public static function getItemsOnCart() {

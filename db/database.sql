@@ -27,7 +27,7 @@ CREATE TABLE clients (
 CREATE TABLE common (
    dtnasc DATE NOT NULL,
    name VARCHAR(30) NOT NULL,
-   sex VARCHAR(10) NOT NULL,
+   sex VARCHAR(10) NOT	 NULL,
    cpf VARCHAR(15) NOT NULL                   
 ) inherits (clients);
 
@@ -76,3 +76,18 @@ CREATE TABLE photos (
 CREATE TABLE product_photo (
   product_photo INTEGER references products(id) ON DELETE CASCADE
 ) inherits(photos);
+
+CREATE TABLE orders (
+id SERIAL PRIMARY KEY,
+orderIn DATE NOT NULL,
+status VARCHAR(20) NOT NULL,
+total NUMERIC(10,2) NOT NULL,
+client_id INTEGER, FOREIGN KEY (client_id) REFERENCES clients (id)
+);
+
+CREATE TABLE items_orders (
+qnt INTEGER NOT NULL,
+product_value NUMERIC(10,2) NOT NULL,
+order_id INTEGER, FOREIGN KEY (order_id) REFERENCES orders (id),
+product_id INTEGER, FOREIGN KEY (product_id) REFERENCES products (id)
+);

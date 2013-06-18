@@ -17,6 +17,7 @@
                 case 1:
                     $controller = new ContactController();
                     $controller->_new();
+				break;
                 case 2:
                     if ($url->params(1) == 'enviar'){
                         redirect_if_not_a_post_request('contact');
@@ -28,6 +29,17 @@
                     page_not_found();
             }
         break;
+		
+		case 'fechar-pedido':
+			switch ($url->numberOfParams()) {
+                case 1:
+                    $controller=new OrderController();
+					$controller->create();
+				break;
+                default:
+                    page_not_found();
+            }
+		break;
 
         case 'admin':
             should_be_autenticated_as_admin();
