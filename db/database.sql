@@ -76,3 +76,20 @@ CREATE TABLE photos (
 CREATE TABLE product_photo (
   product_photo INTEGER references products(id) ON DELETE CASCADE
 ) inherits(photos);
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  orderIn DATE NOT NULL,
+  status VARCHAR(10) NOT NULL,
+  total NUMERIC(10,2) NOT NULL,
+
+  user_id INTEGER, FOREIGN KEY (user_id) REFERENCES users (id)
+);
+
+CREATE TABLE items_orders (
+  id SERIAL PRIMARY KEY,
+  qnt INTEGER NOT NULL,
+  product_value NUMERIC(10,2) NOT NULL,
+  order_id INTEGER, FOREIGN KEY (order_id) REFERENCES orders (id),
+  product_id INTEGER, FOREIGN KEY (product_id) REFERENCES products (id)
+);
