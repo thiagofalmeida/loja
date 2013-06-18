@@ -135,10 +135,14 @@
                 case 2;
                 case 3;
                     $controller = new ProductsController();
-					
                     $id = (int) $url->params(1);
                     $controller->category($id);
                     break;
+				case 4;
+				case 5:
+					$controller = new ProductsController();
+                    $id = (int) $url->params(3);
+                    $controller->getById($id);
                 default:
                     page_not_found();
             }

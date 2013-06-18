@@ -13,8 +13,8 @@
                     <?php } ?>
                     <li class="span4">
                         <div id="list" class="thumbnail">
-                            <?=  image_tag('products', 'list', $product->getPhotoName(), $product->getName()) ?>
-                            <h5><?= $product->getName(); ?></h5>
+                            <?=  link_to("{$product->getDepartment_Id()}/produto/{$product->getId()}", image_tag('products', 'list', $product->getPhotoName(), $product->getName())) ?>
+                            <h5><?= link_to("{$product->getDepartment_Id()}/produto/{$product->getId()}",$product->getName()); ?></h5>
                             <h6><?= $product->getPrice(); ?></h6>
                             <?= button_to("/carrinho/{$product->getId()}", 'Add ao carrinho', 'btn btn-primary btn-small')?>
                             <?= button_to("/carrinho/{$product->getId()}/fechar", 'Fechar a compra', 'btn btn-small')?>                         
@@ -33,7 +33,7 @@
         <div class="paginacao">
 			<?php
 				$numPages = @$numRows % QNT_PROD;
-				for ($i = 1; $i <= $numPages; $i++) { echo link_to("/?pagina=$i", $i); } 
+				for ($i = 1; $i <= $numPages; $i++) { echo link_to("?pagina=$i", $i); } 
 			?>
 		</div> 
 	</article>

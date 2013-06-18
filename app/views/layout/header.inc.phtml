@@ -70,13 +70,14 @@
       <div class="span3">
         <div class="sidebar-nav">
           <ul class="nav nav-tabs nav-stacked nav-fixed">
-            <li><?= link_to('/', '<i class="icon-chevron-right"></i> Rins'); ?></li>
-            <li><?= link_to('/', '<i class="icon-chevron-right"></i> Figados'); ?></li>
-            <li><?= link_to('/', '<i class="icon-chevron-right"></i> Cerebros'); ?></li>
-            <li><?= link_to('/', '<i class="icon-chevron-right"></i> Corações'); ?></li>
-            <li><?= link_to('/', '<i class="icon-chevron-right"></i> Pulmões'); ?></li>
-            <li><?= link_to('/', '<i class="icon-chevron-right"></i> Pancrêas'); ?></li>
-            <li><?= link_to('/', '<i class="icon-chevron-right"></i> Linguás'); ?></li>
+          	<?php
+          		$departments = Department::getAll();
+				foreach($departments as $department) {
+          	?>
+            		<li><?= link_to("/categoria/{$department->getId()}", "<i class=\"icon-chevron-right\"></i> {$department->getName()}") ?></li>
+            <?php } ?>
+            
+            
           </ul>
           <ul class="nav nav-tabs nav-stacked nav-fixed">
             <?php if (current_user()) { ?>

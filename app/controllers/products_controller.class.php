@@ -23,6 +23,11 @@
     		$this->render(array('view' => 'products/index.phtml', 'products' => $products));
   		}
 		
+		function getById($id) {
+			$product = Product::findById($id);
+			$this->render(array('view' => 'products/details.phtml', 'product' => $product));
+		}
+		
 		function category($id) {
 			$ret= Product::findByDepartment($id);
 			extract($ret);
