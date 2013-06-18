@@ -1,10 +1,5 @@
 <?php
 	class ProductsController extends BaseController {
-		
-		/*unction index() {
-			$products= Product::getAll();
-    		$this->render(array('view' => 'products/index.phtml', 'products' => $products));
-  		}*/
 
   		function details() {
 			$id = 51;

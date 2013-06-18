@@ -14,10 +14,10 @@
                     <li class="span4">
                         <div id="list" class="thumbnail">
                             <?=  image_tag('products', 'list', $product->getPhotoName(), $product->getName()) ?>
-                            <h5><?= $product->getName(); ?></h5>
+                            <h5><?= link_to("/categoria/{$product->getDepartment_Id()}/produto/{$product->getId()}",$product->getName()); ?></h5>
                             <h6><?= $product->getPrice(); ?></h6>
-                            <a class="btn btn-small btn-primary" href="#">Add ao carrinho</a>
-                            <a class="btn btn-small" href="#">Fechar a compra</a>
+                            <?= button_to("/carrinho/{$product->getId()}", 'Add ao carrinho', 'btn btn-primary btn-small')?>
+                            <?= button_to("/carrinho/{$product->getId()}/fechar", 'Fechar a compra', 'btn btn-small')?>  
                         </div>
                     </li>
                     <?php $i++;

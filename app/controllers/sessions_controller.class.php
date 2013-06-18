@@ -1,7 +1,7 @@
 <?php
 class SessionsController extends BaseController {
 	public function _new() {
-		$this -> render(array('view' => 'sessions/new.phtml'));
+		$this->render(array('view' => 'sessions/new.phtml'));
 	}
 
 	public function create() {

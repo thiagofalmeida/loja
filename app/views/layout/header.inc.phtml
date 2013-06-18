@@ -52,7 +52,7 @@
     </div>
     <div class="show-cart">
       <img src="/loja/app/assets/img/cart.png" alt="carrinho de compras" class="size-cart">
-      <a href="/loja/carrinho" class="show-items"><?= Cart::getItemsOnCart(); ?></a>
+      <a href="/loja/carrinho" class="show-items"><?php echo Cart::getItemsOnCart(); ?></a>
     </div>
     <div class="show-search">
       <form id='files-search-form' class='form-search' action='#' method='GET'>
@@ -70,14 +70,13 @@
       <div class="span3">
         <div class="sidebar-nav">
           <ul class="nav nav-tabs nav-stacked nav-fixed">
-          	<?php
-          		$departments = Department::getAll();
-				foreach($departments as $department) {
+            <?php 
+              if ((!current_user()) || (!current_user()->getAdmin())) { 
+                $departments = Department::getAll();
+				        foreach($departments as $department) {
           	?>
-            		<li><?= link_to("/categoria/{$department->getId()}", "<i class=\"icon-chevron-right\"></i> {$department->getName()}") ?></li>
-            <?php } ?>
-            
-            
+            	<li><?= link_to("/categoria/{$department->getId()}", "<i class=\"icon-chevron-right\"></i> {$department->getName()}") ?></li>
+            <?php }} ?>
           </ul>
           <ul class="nav nav-tabs nav-stacked nav-fixed">
             <?php if (current_user()) { ?>

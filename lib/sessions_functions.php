@@ -36,7 +36,6 @@ function current_user() {
   if (isset($_SESSION['user'])) {
     return User::findById($_SESSION['user']['id']);
   } else
-  return false;
+    return false;
 }
-
 ?>
