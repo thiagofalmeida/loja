@@ -59,6 +59,24 @@
                     $controller->show();
                 break;
 
+				case 'pedidos':
+					 switch ($url->params(2)) {
+					 	case '':	
+							$controller = new Admin\OrderController();
+							$controller->index();
+							break;
+						case 'visualizar':
+							$controller = new Admin\OrderController();
+							$id = (int) $url->params(3);
+							$controller->details($id);
+							break;
+						default:
+							$controller = new Admin\OrderController();
+							$controller->index();
+							break;
+					 }
+					
+				break;
                 case 'departamentos':
                     $controller = new Admin\DepartmentController();
                     resources($controller, $url->paramsAfter(2));

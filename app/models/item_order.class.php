@@ -6,6 +6,21 @@ class ItemOrder extends Base {
 	private $product_id;
 
 	public function validates() {}
+	
+	public function initialize() {
+		
+	}
+
+	public static function getTotalFromItems() {
+		if (isset($_COOKIE['cart'])) {
+			$products = $_COOKIE['cart'];
+			$total=0;
+			foreach ($products as $key => $value) {
+				$total = $total + (PRODUCT::findById($key)->getPrice() * $value);
+			}
+			return $total;
+		}
+	}
 
 	public function setQnt($qnt) {
 		$this->qnt = $qnt;
