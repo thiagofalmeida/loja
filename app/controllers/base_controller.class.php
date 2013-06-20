@@ -7,6 +7,9 @@ abstract class BaseController {
     		if (current_user()->getAdmin())  {
     			require 'views/admin/layout/header.inc.phtml';	
     		}
+			else {
+    			require 'views/layout/header.inc.phtml';
+    		}
     	} else {
     		require 'views/layout/header.inc.phtml';
     	}
