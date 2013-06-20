@@ -34,11 +34,6 @@ class Order extends Base {
 	public function getUser_id() {
 		return $this->user_id;
 	}
-<<<<<<< HEAD
-
-	
-=======
-	
 	
 	public static function findById($id){
 		$db_conn = Database::getConnection();
@@ -95,7 +90,7 @@ class Order extends Base {
 	
 	
 	public function saveProducts() {
-		$products=$_COOKIE['cart'];
+		$products = $_COOKIE['cart'];
 		$db_conn = Database::getConnection();
 		foreach ($products as $key => $value) {
 			$sql = "INSERT INTO items_orders (order_id, product_id, product_value, qnt) values ($1, $2, $3, $4);";
@@ -125,9 +120,19 @@ class Order extends Base {
 
     	$this->setId(pg_fetch_assoc($resp)['id']);
     	$this->saveProducts();
+
+    	//setcookie("cart[{$this->product_id}]", "", time() - 3600 * 48, '/');
+		$products = $_COOKIE['cart'];
+		foreach ($products as $key => $value) {
+			setcookie("cart[{$key}]", "", time() - 3600 * 48, '/');
+		}
 		
+			//print_r($key);
+		//}
+		//print_r($_COOKIE['cart']);
+		//var_dump($products);
+		//print_r($products);
     	return true;
     }
->>>>>>> 09754c6cb0e6b6aa02c219e950ee210c5d030071
 }
 ?>

@@ -7,19 +7,18 @@ class ItemOrder extends Base {
 
 	public function validates() {}
 	
-	public function initialize() {
-		
-	}
+	public function initialize() {}
 
 	public static function getTotalFromItems() {
 		if (isset($_COOKIE['cart'])) {
 			$products = $_COOKIE['cart'];
-			$total=0;
+			$total = 0;
 			foreach ($products as $key => $value) {
-				$total = $total + (PRODUCT::findById($key)->getPrice() * $value);
+				$total = $total + (Product::findById($key)->getPrice() * $value);
 			}
 			return $total;
 		}
+		return false;
 	}
 
 	public function setQnt($qnt) {

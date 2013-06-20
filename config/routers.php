@@ -88,6 +88,7 @@
         break;
 
         case 'login':
+            should_not_be_autenticated();
             switch ($url->numberOfParams()) {
                 case 1:
                     $controller = new SessionsController();
@@ -102,6 +103,7 @@
         break;
 
         case 'logout':
+            should_be_autenticated();
             switch ($url->numberOfParams()) {
                 case 1:
                     $controller = new SessionsController();
@@ -124,6 +126,7 @@
         break;
 
         case 'registre-se':
+            should_not_be_autenticated();
             switch ($url->numberOfParams()) {
                 case 1:
                     $controller = new UsersController();

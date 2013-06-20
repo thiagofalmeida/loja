@@ -3,14 +3,15 @@
 function should_be_autenticated(){
   if (!(isset($_SESSION['user']))) {
     flash('error', 'Você deve estar logado para acessar está página!');
-    redirect_to('/sessions/new.phtml');
+    //redirect_to('/sessions/new.phtml');
+    redirect_to('/login');
     exit;
   }
 }
 
 function should_not_be_autenticated(){
   if (isset($_SESSION['user'])) {
-    flash('warning', 'Você deve estar deslogado para acessar está página!');
+    flash('info', 'Você deve estar deslogado para acessar está página!');
     redirect_to('/');
     exit;
   }

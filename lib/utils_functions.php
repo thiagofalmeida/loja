@@ -5,4 +5,8 @@
 
 		return 'Não';
 	}
+
+	function money_convert($value) {
+		return number_format($value , 2, ',', '.');
+	}
 ?>

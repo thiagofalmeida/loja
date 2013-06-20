@@ -23,26 +23,27 @@
                         if ($cart != false) {
                             foreach ($cart as $key => $value) {
                                 $product = Product::findById($key);
+                                @$total += $value * $product->getPrice($key);
                     ?>
                     <tr>
                         <td><?= $key; ?></td>
                         <td><?= $product->getName() ?></td>
                         <td><input class="amount-cart" type="text" name="amount[<?= $key; ?>]" value="<?= $value; ?>"></td>
-                        <td><?= $product->getPrice() ?></td> 
+                        <td><?= money_convert($product->getPrice()) ?></td> 
                         <td><input class="remove-cart" type="checkbox" name="remove[]" value="<?= $key; ?>"></td>
-                        <td><?= $product->getPrice() * $value ?></td>
+                        <td><?= money_convert($product->getPrice() * $value); ?></td>
                     </tr>
-                    <?php }} ?>
                     <tr>
                         <td colspan="5"></td>
-                        <td><?='oi' ?></td>
+                        <td>R$ <?= money_convert($total); ?></td>
                     </tr>
+                    <?php }} ?>
                 </tbody>
             </table>
             <div class="button-show">
                 <input type="submit" name="update" value="Atualizar Carrinho" class="btn btn">
                 <div class="button-finish">
-                    <?= button_to("/carrinho/fechar", 'Fechar a compra', 'btn btn-info')?> 
+                    <?= button_to("/fechar-pedido", 'Fechar a compra', 'btn btn-info')?> 
                 </div>
             </div>
         </article>
