@@ -8,13 +8,13 @@ php_flag display_errors on
 php_flag display_startup_errors on
 php_flag html_errors on
 php_flag log_errors on
-php_value error_log  /var/www/html/loja/logs/PHP_errors.log
+php_value error_log  C:/xampp/htdocs/loja/logs/PHP_errors.log
 
 # Friendly Urls
 
 RewriteEngine On
 #Ativa o suporte à reescrita de URL. Isso significa que as URL poderão ser direcionadas para um determinado arquivo no apache.
-RewriteBase /loja/
+RewriteBase /loja/	
 #Diretório base para sobreescrições
 
 RewriteCond %{REQUEST_FILENAME} !-f

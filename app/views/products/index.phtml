@@ -29,7 +29,8 @@
 	<article>
         <div class="pagination">
 			<?php
-				$numPages = @$numRows % QNT_PROD;
+			
+				$numPages = ceil($numRows / QNT_PROD);
 				for ($i = 1; $i <= $numPages; $i++) { echo button_to("?pagina=$i", $i, "page-style"); }
 			?>
 		</div> 

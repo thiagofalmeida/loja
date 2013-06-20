@@ -79,11 +79,12 @@ CREATE TABLE product_photo (
 
 CREATE TABLE orders (
 id SERIAL PRIMARY KEY,
-orderIn DATE NOT NULL,
+createdAt TIMESTAMP,
 status VARCHAR(20) NOT NULL,
 total NUMERIC(10,2) NOT NULL,
 user_id INTEGER, FOREIGN KEY (user_id) REFERENCES users (id)
 );
+
 CREATE TABLE items_orders (
   id SERIAL PRIMARY KEY,
   qnt INTEGER NOT NULL,

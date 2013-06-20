@@ -143,11 +143,9 @@ class Product extends Base {
 
 		if ($row = pg_fetch_assoc($resp)) {
 			$product = new Product($row);
-			pg_close($db_conn);
 			return $product;
 		}
 		
-		pg_close($db_conn);
 		return null;
 	}
 
