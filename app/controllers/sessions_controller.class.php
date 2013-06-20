@@ -13,7 +13,8 @@ class SessionsController extends BaseController {
 			if (current_user()->getAdmin()) {
 				$this->render(array('view' => 'admin/home/index.phtml'));
 			} else {
-				$this->render(array('view' => 'home/index.phtml'));
+				$products = Product::getFeacturedProducts();
+				$this->render(array('view' => 'home/index.phtml', 'products' => $products));
 			}
 		} else {
 			flash('error', 'Login/senha incorretas!');
@@ -27,4 +28,4 @@ class SessionsController extends BaseController {
 		redirect_to('/');
 	}
 }
-?>
+?>''
