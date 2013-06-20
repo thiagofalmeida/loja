@@ -26,13 +26,18 @@
             <ul class="nav">
               <li><a id="swatch-link" href="<?= url_for('/') ?>">Home</a></li>
               <li><?= link_to('/produtos','Produtos'); ?></li>
-              <?php if (!(current_user())) { ?>
+               <?php if ((!current_user()) || (!current_user()->getAdmin())) {  ?>
                 <li><?= link_to('/login','Login'); ?></li>
                 <li><?= link_to('/registre-se','Registre-se'); ?></li>
                 <li><?= link_to('/fale-conosco','Fale Conosco'); ?></li>
                 <li><?= link_to('/sobre-a-empresa','Sobre a Empresa'); ?></li>
-              <?php } else { ?>
+              <?php } else { 
+                         if ((current_user()) || (current_user()->getAdmin())) {
+              ?>
                 <li><?= link_to('/logout', 'Logout'); ?></li>
+                <?php } else { ?>
+                  <li><?= link_to('/login','Login'); ?></li>
+                <?php } ?>
                 <li><?= link_to('/admin/departamentos','Departamentos'); ?></li>
                 <li><?= link_to('/admin/mensagens','Mensagens'); ?></li>
                 <li><?= link_to('/admin/produtos','Produtos'); ?></li>

@@ -38,5 +38,7 @@ class Order extends Base {
 	public function getUser_id() {
 		return $this->user_id;
 	}
+
+	
 }
 ?>

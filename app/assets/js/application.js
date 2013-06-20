@@ -27,7 +27,7 @@ var data_confirm = function () {
 };
 
 jQuery(function($) {
-    $("#common_phone").mask("(99)999-9999");
+    $("#common_phone").mask("(99)9999-9999");
     $("#common_dtnasc").mask("99/99/9999");
     $('#common_cpf').mask('999.999.999-99');
     $('#user_cep').mask('99999-999');
