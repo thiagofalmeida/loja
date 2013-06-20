@@ -28,9 +28,8 @@
                     <td><?= $order->getStatus(); ?></td>
                     <td class='options'>
                         <ul>
-                            <li><?= link_to("/admin/produtos/{$order->getId()}",'Visualizar')?></li>
-                            <li><?= link_to("/admin/produtos/{$order->getId()}/editar",'Editar')?></li>
-                            <li><?= link_to("/admin/produtos/{$order->getId()}/deletar",'Remover', 'data-confirm="Tem certeza?"')?></li>
+                            <li><?= link_to("/admin/pedidos/visualizar/{$order->getId()}",'Visualizar')?></li>
+                            <li><?= link_to("/admin/pedidos/remover/{$order->getId()}",'Remover', 'data-confirm="Tem certeza?"')?></li>
                         </ul>
                     </td>
                 </tr>

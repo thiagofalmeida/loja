@@ -20,6 +20,17 @@ class ItemOrder extends Base {
 		}
 		return false;
 	}
+	
+	public static function deleteItemsFromOrder($orderId) {
+		$db_conn = Database::getConnection();
+		$params = array($orderId);
+		$sql = "delete from items_orders where order_id = $1";
+		$resp = pg_query_params($db_conn, $sql, $params);
+		if ($resp) {
+			return true;
+		}
+		return false;
+	}
 
 	public function setQnt($qnt) {
 		$this->qnt = $qnt;

@@ -70,6 +70,11 @@
 							$id = (int) $url->params(3);
 							$controller->details($id);
 							break;
+						case 'remover':
+							$controller = new Admin\OrderController();
+							$id = (int) $url->params(3);
+							$controller->destroy($id);
+							break;
 						default:
 							$controller = new Admin\OrderController();
 							$controller->index();

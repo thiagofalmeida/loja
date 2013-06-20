@@ -13,5 +13,12 @@
 			$order=\Order::findById($id);
 			$this->render(array('view' => 'admin/orders/details.phtml', 'order' => $order));
 		}
+		
+		function destroy($id){
+			$order=\Order::findById($id);
+			$order->delete();
+			flash('success', 'Pedido removido com sucesso!');
+			redirect_to("/admin/pedidos");
+		}
 	}
 ?>

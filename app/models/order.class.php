@@ -53,6 +53,18 @@ class Order extends Base {
 		return null;
 	}
 	
+	public function delete() {
+		$db_conn = Database::getConnection();
+		$params = array($this->id);
+		
+		if (ItemOrder::deleteItemsFromOrder($this->id)) {
+			$sql = "delete from orders where id = $1";
+			$resp = pg_query_params($db_conn, $sql, $params);
+			pg_close($db_conn);
+			return $resp;	
+		}	
+	}
+	
 	public static function getAllByPage() {
 		$db_conn = Database::getConnection();
 		// PEGANDO QUANTIDADE DE REGISTROS
@@ -127,11 +139,6 @@ class Order extends Base {
 			setcookie("cart[{$key}]", "", time() - 3600 * 48, '/');
 		}
 		
-			//print_r($key);
-		//}
-		//print_r($_COOKIE['cart']);
-		//var_dump($products);
-		//print_r($products);
     	return true;
     }
 }
