@@ -28,4 +28,4 @@ class SessionsController extends BaseController {
 		redirect_to('/');
 	}
 }
-?>
+?>''
