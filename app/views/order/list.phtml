@@ -1,11 +1,19 @@
-<?php
-	foreach($orders as $order) {
-		echo $order->getId();
-		echo "<br>";
-		echo $order->getTotal();
-		echo "<br>-----------------------------------------<br>";
-	}
-	
-
-
-?>
+<section>
+ 	<header class='page-header'>
+ 		<div class='clearfix'>
+ 			<div class='left'>
+ 				<h3> Pedido Nº <?= $order->getId(); ?> </h3>
+ 				<small class='help-block'> Pedido em <?= $order->getCreatedAt() ?> </small>
+ 			</div>
+ 			<div class='right'>
+ 				<?= link_to('/pedidos', 'Todos os pedidos')?>
+ 			</div>
+ 		</div>
+ 	</header>
+ 	<article>
+ 		<p><strong>ID: </strong><?= $order->getId() ?></p>
+ 		<p><strong>Total: </strong><?= $order->getTotal() ?></p>
+ 		<p><strong>Status: </strong><?= $order->getStatus() ?></p>
+ 		<p><strong>Cliente: </strong><?= Order::getUserEmail($order->getUser_id()); ?></p>
+ 	</article>
+ </section>

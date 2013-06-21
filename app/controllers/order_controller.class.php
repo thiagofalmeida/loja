@@ -2,9 +2,10 @@
 	class OrderController extends BaseController {
 		
 		
-		public function index (){
-			
-  		}
+		public function index($id) {
+			$order = Order::getAllByUser($id);
+			$this->render(array('view' => 'order/index.phtml','orders' => $order));
+		}
 		
 		public function create() {
 			$cart = Cart::getProducts();
@@ -21,7 +22,8 @@
 				if ($order->save()) {
 					flash('success', 'Pedido realizado com sucesso!');
 					$cart=null;
-					$this->render(array('view' => 'order/finish.phtml', 'cart' => $cart, 'order'=> $order));
+					$order = Order::findById($order->getid());
+					$this->render(array('view' => 'order/list.phtml', 'cart' => $cart, 'order'=> $order));
 				} else {
 					flash('error', 'Não foi possivel realizar seu pedido por favor tente mais tarde!');
 				}
@@ -33,15 +35,13 @@
 		}
 		
 		public function id($id) {
-			$order=Order::findById($id);
+			$order = Order::findById($id);
 			$this->render(array('view'=>'order/finish.phtml', 'order' => $order));
 		}
 		
-		public function getAll() {
-			$orders= Order::getAllByUser(current_user()->getId());
-			$this->render(array('view' => 'order/list.phtml', 'orders' => $orders));
-			
-			
+		public function show($id) {
+			$order = Order::findById($id);
+			$this->render(array('view'=>'order/list.phtml', 'order' => $order));
 		}
 	}
 ?>

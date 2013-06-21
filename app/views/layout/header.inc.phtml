@@ -28,6 +28,7 @@
               <li><?= link_to('/produtos','Produtos'); ?></li>
               <?php if (current_user()) { ?>
                 <li><?= link_to('/logout','Sair'); ?></li>
+                <li><?= link_to('/pedidos','Pedidos'); ?></li>
               <?php } else { ?>
                 <li><?= link_to('/registre-se','Registre-se'); ?></li>
                 <li><?= link_to('/login','Entrar'); ?></li>

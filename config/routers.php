@@ -64,21 +64,21 @@
 					 	case '':	
 							$controller = new Admin\OrderController();
 							$controller->index();
-							break;
+						break;
 						case 'visualizar':
 							$controller = new Admin\OrderController();
 							$id = (int) $url->params(3);
-							$controller->details($id);
-							break;
+							$controller->show($id);
+						break;
 						case 'remover':
 							$controller = new Admin\OrderController();
 							$id = (int) $url->params(3);
 							$controller->destroy($id);
-							break;
+						break;
 						default:
 							$controller = new Admin\OrderController();
 							$controller->index();
-							break;
+						break;
 					 }
 					
 				break;
@@ -210,14 +210,19 @@
 			should_be_autenticated();
 			switch ($url->numberOfParams()) {
 				case 1:
-					$controller=new OrderController();
-					$controller->getAll();
-					break;
+					$controller = new OrderController();
+					$controller->index(current_user()->getId());
+				break;
+                case 2:
+                    $controller = new OrderController();
+                    $id = (int) $url->params(1);
+                    $controller->show($id);
+                break;
 				default:
 					$id = (int) $url->params(1);
 					if (Order::findById($id)) {
 						if (current_user()->getId() == Order::findById($id)->getUser_id()) {
-							$controller=new OrderController();
+							$controller = new OrderController();
 							$controller->id($id);
 						} else {
 							flash('error', 'Você não tem permissão para acessar esse pedido!');

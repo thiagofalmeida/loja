@@ -63,5 +63,17 @@ class ItemOrder extends Base {
 	public function getProduct_id() {
 		return $this->product_id;
 	}
+
+	public static function getAll(){
+      	$sql = "select * from items_orders;";
+      	$resp = pg_query(Database::getConnection(), $sql);
+      	$items = array();
+
+      	while ($row = pg_fetch_assoc($resp)) {
+       		$items[] = new ItemOrder($row);
+      	}
+
+      	return $items;
+    }
 }
 ?>

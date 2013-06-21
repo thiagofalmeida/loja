@@ -64,12 +64,48 @@ class Order extends Base {
 			return $resp;	
 		}	
 	}
+
+	public static function getUserEmail($id) {
+		$db_conn = Database::getConnection();
+		$sql = "select email from users where id = $1;";
+		$params = array($id);
+		$resp = pg_query_params($db_conn, $sql, $params);
+		
+		if (!$resp) { pg_close($db_conn); return null; }
+
+		if ($row = pg_fetch_assoc($resp)) {
+			$user = new User($row);
+			pg_close($db_conn);
+			return $user->getEmail();
+		}
+		
+		pg_close($db_conn);
+		return null;
+	}
+
+	public static function getAllByOrder($orderId) {
+		$db_conn = Database::getConnection();
+		$sql = "select * from items_orders where order_id = $1";
+	
+		$params = array($orderId);
+		$resp = pg_query_params($db_conn, $sql, $params);
+
+		if (!$resp) { pg_close($db_conn); return null; }
+		
+		$orders = array();
+
+      	while ($row = pg_fetch_assoc($resp)) {
+       		$orders[] = new ItemOrder($row);
+      	}
+		
+		pg_close($db_conn);
+		return $orders;
+	}	
 	
 	public static function getAllByUser($userId) {
 		$db_conn = Database::getConnection();
 		$sql = "select * from orders where user_id=$1";
-		
-
+	
 		$params = array($userId);
 		$resp = pg_query_params($db_conn, $sql, $params);
 
@@ -83,8 +119,7 @@ class Order extends Base {
 		
 		pg_close($db_conn);
 		return $orders;
-	}
-	
+	}	
 	
 	public static function getAllByPage() {
 		$db_conn = Database::getConnection();
@@ -140,8 +175,6 @@ class Order extends Base {
     	return true;
 	}
 	
-	
-	
 	public function save() {
     	$sql = "INSERT INTO orders (createdAt, status, total, user_id) values ($1, $2, $3, $4) RETURNING ID;";
 		$params = array($this->createdAt, $this->status, $this->total, $this->user_id);
@@ -157,7 +190,6 @@ class Order extends Base {
     	$this->setId(pg_fetch_assoc($resp)['id']);
     	$this->saveProducts();
 
-    	//setcookie("cart[{$this->product_id}]", "", time() - 3600 * 48, '/');
 		$products = $_COOKIE['cart'];
 		foreach ($products as $key => $value) {
 			setcookie("cart[{$key}]", "", time() - 3600 * 48, '/');

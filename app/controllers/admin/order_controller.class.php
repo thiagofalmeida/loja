@@ -9,9 +9,9 @@
 			$this->render(array('view' => 'admin/orders/index.phtml', 'orders' => $orders, 'numRows' => $numRows));
 		}
 		
-		function details($id) {
+		function show($id) {
 			$order=\Order::findById($id);
-			$this->render(array('view' => 'admin/orders/details.phtml', 'order' => $order));
+			$this->render(array('view' => 'admin/orders/show.phtml', 'order' => $order));
 		}
 		
 		function destroy($id){
