@@ -105,12 +105,28 @@ class Product extends Base {
 			$this->errors['photo'] = array_values($this->photo->errors())[0];
 		}
 	}
+	
+	public static function getStockById($id) {
+		$db_conn = Database::getConnection();
+		$sql = "select stock from products where id = $1;";
+		$params=array($id);
+      	$resp = pg_query_params($db_conn, $sql, $params);
+      	
+		if (!$resp) { pg_close($db_conn); return null; }
+
+		if ($row = pg_fetch_assoc($resp)) {
+			$product = new Product($row);
+			return $product->getStock();
+		}
+		
+		return null;
+	}
 
 	public static function getAll(){
       	$sql = "select * from products;";
       	$resp = pg_query(Database::getConnection(), $sql);
       	$products = array();
-
+	
       	while ($row = pg_fetch_assoc($resp)) {
        		$products[] = new Product($row);
       	}

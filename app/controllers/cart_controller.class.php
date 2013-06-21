@@ -11,7 +11,12 @@ class CartController  extends BaseController {
 		if ($cart->add($id)) {
 			flash('success', 'Item adicionado ao carrinho com sucesso');
 		} else {
-			flash('error', 'Não foi possivel adicionar o item ao carrinho');
+			if (isset($_SESSION['flash'])) {
+				redirect_to(back());
+			} else {
+				flash('error', 'Não foi possivel adicionar o item ao carrinho');
+			}
+			
 		}
 		redirect_to(back());
 	}

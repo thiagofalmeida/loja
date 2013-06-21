@@ -11,11 +11,22 @@ class Cart {
 	public function add($id) {
 		if ($this->exist($id)) {
 			$qnt = $_COOKIE["cart"][$id] + 1;
-			setcookie("cart[{$id}]", $qnt, time() + 3600 * 48, '/');
-			return true;
+			if (Product::getStockById($id)>=$qnt) {
+				setcookie("cart[{$id}]", $qnt, time() + 3600 * 48, '/');
+				return true;	
+			} else {
+				flash('error', 'Não foi possivel adicionar o item ao carrinho pois não há estoque suficiente');
+				redirect_to(back());
+			}
+			
 		} else {
-			setcookie("cart[{$id}]", 1, time() + 3600 * 48, '/');
-			return true;
+			if (Product::getStockById($id)>=1) {
+				setcookie("cart[{$id}]", 1, time() + 3600 * 48, '/');
+				return true;
+			} else {
+				flash('error', 'Não foi possivel adicionar o item ao carrinho pois não há estoque suficiente');
+				redirect_to(back());
+			}
 		}
 		return false;
 	}
