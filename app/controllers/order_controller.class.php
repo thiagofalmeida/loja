@@ -20,7 +20,8 @@
 
 				if ($order->save()) {
 					flash('success', 'Pedido realizado com sucesso!');
-					redirect_to("/");
+					$cart=null;
+					$this->render(array('view' => 'order/finish.phtml', 'cart' => $cart, 'order'=> $order));
 				} else {
 					flash('error', 'Não foi possivel realizar seu pedido por favor tente mais tarde!');
 				}
@@ -29,6 +30,18 @@
 			}
 			
 			$this->render(array('view' => 'cart/index.phtml', 'cart' => $cart));
+		}
+		
+		public function id($id) {
+			$order=Order::findById($id);
+			$this->render(array('view'=>'order/finish.phtml', 'order' => $order));
+		}
+		
+		public function getAll() {
+			$orders= Order::getAllByUser(current_user()->getId());
+			$this->render(array('view' => 'order/list.phtml', 'orders' => $orders));
+			
+			
 		}
 	}
 ?>

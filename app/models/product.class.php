@@ -121,6 +121,15 @@ class Product extends Base {
 		
 		return null;
 	}
+	
+	public static function decreaseStock($id, $qnt) {
+		$db_conn = Database::getConnection();
+		$sql = "update products set stock=stock-$1 where id=$2";
+		$params=array($qnt, $id);
+      	$resp = pg_query_params($db_conn, $sql, $params);
+		
+		return $resp;
+	}
 
 	public static function getAll(){
       	$sql = "select * from products;";

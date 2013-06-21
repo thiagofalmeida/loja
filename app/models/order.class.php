@@ -65,6 +65,27 @@ class Order extends Base {
 		}	
 	}
 	
+	public static function getAllByUser($userId) {
+		$db_conn = Database::getConnection();
+		$sql = "select * from orders where user_id=$1";
+		
+
+		$params = array($userId);
+		$resp = pg_query_params($db_conn, $sql, $params);
+
+		if (!$resp) { pg_close($db_conn); return null; }
+		
+		$orders = array();
+
+      	while ($row = pg_fetch_assoc($resp)) {
+       		$orders[] = new Order($row);
+      	}
+		
+		pg_close($db_conn);
+		return $orders;
+	}
+	
+	
 	public static function getAllByPage() {
 		$db_conn = Database::getConnection();
 		// PEGANDO QUANTIDADE DE REGISTROS
@@ -108,6 +129,7 @@ class Order extends Base {
 			$sql = "INSERT INTO items_orders (order_id, product_id, product_value, qnt) values ($1, $2, $3, $4);";
 			$params = array($this->id, $key, Product::findById($key)->getPrice(), $value);	
 			$resp = pg_query_params($db_conn, $sql, $params);
+			Product::decreaseStock($key, $value);
 			if (!$resp) {
     			Logger::getInstance()->log("Falha para salvar o objeto: " . print_r($this, TRUE), Logger::ERROR);
     			Logger::getInstance()->log("Error: " . print_r(error_get_last(), true), Logger::ERROR);
@@ -117,6 +139,8 @@ class Order extends Base {
 		pg_close($db_conn);
     	return true;
 	}
+	
+	
 	
 	public function save() {
     	$sql = "INSERT INTO orders (createdAt, status, total, user_id) values ($1, $2, $3, $4) RETURNING ID;";

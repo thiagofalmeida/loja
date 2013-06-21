@@ -204,7 +204,32 @@
                 default:
                     page_not_found();
             }
-        break;  
+        break; 
+		
+		case 'pedidos':
+			should_be_autenticated();
+			switch ($url->numberOfParams()) {
+				case 1:
+					$controller=new OrderController();
+					$controller->getAll();
+					break;
+				default:
+					$id = (int) $url->params(1);
+					if (Order::findById($id)) {
+						if (current_user()->getId() == Order::findById($id)->getUser_id()) {
+							$controller=new OrderController();
+							$controller->id($id);
+						} else {
+							flash('error', 'Você não tem permissão para acessar esse pedido!');
+							redirect_to('/');
+						}
+					} else {
+						flash('error', 'Você não tem permissão para acessar esse pedido!');
+						redirect_to('/');
+					}
+				break;
+			}
+			break;
 
         case 'produtos':
             switch ($url->params(1)) {
