@@ -16,6 +16,7 @@
       
       Validations::validEmail($this->email, 'email', $this->errors);
       Validations::uniqueField($this->email, 'email', 'users', 'email', $this->errors); 
+      Validations::uniqueField($this->cpf, 'cpf', 'common', 'cpf', $this->errors);
       Validations::validPhone($this->phone, 'phone', $this->errors);
       Validations::validDate($this->dtnasc, 'dtnasc', $this->errors);
       Validations::validCpf($this->cpf, 'cpf', $this->errors);

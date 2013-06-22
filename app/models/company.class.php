@@ -17,6 +17,7 @@
       Validations::notEmpty($this->ie, 'ie', $this->errors);
 
       Validations::uniqueField($this->email, 'email', 'users', 'email', $this->errors);
+      Validations::uniqueField($this->cnpj, 'cnpj', 'company', 'cnpj', $this->errors);
       Validations::validEmail($this->email, 'email', $this->errors);
       Validations::validPhone($this->phone, 'phone', $this->errors);
       Validations::validCnpj($this->cnpj, 'cnpj', $this->errors);
