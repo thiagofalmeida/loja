@@ -122,7 +122,7 @@ class Validations {
 
     if (($years < 18) || ($years > 100)) {
       if ($key !== null && $errors !== null) {
-        $msg = 'idade menor que 18 ou maior que 100';
+        $msg = 'idade invalida';
         $errors[$key] = $msg;
       }
       return false;
