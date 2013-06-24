@@ -43,7 +43,7 @@ class CartController  extends BaseController {
 
 		if (!empty($_POST['amount'])) {
 			foreach ($_POST['amount'] as $id => $qnt) {
-				if (Product::getStockById($id) <= $qnt){
+				if (Product::getStockById($id) < $qnt){
 					flash('error', 'Não foi possivel adicionar ' . $qnt . ' unidades do item ' . $id . ' ao carrinho pois não há estoque suficiente');
 				} else {
 					$cart->setItemQuantity($id, $qnt);

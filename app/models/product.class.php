@@ -244,7 +244,7 @@ class Product extends Base {
     public function save() {
     	if (!$this->isvalid()) return false;
 
-    	if ($this->photo && $this->photo->hasImage())
+		if ($this->photo && $this->photo->hasImage())
     		$this->photo->saveToDisc();
 
     	$this->photoName = $this->photo->getName();
@@ -267,6 +267,14 @@ class Product extends Base {
 
     public function update() {
 		if (!$this->isValid()) return false;
+
+		if ($this->photo && $this->photo->hasImage()) {
+			$oldPhoto = new Photo(array(), 'products');
+			$oldPhoto->setName($this->photoName);
+			$oldPhoto->delete();
+			$this->photoName = $this->photo->getName();
+			$this->photo->saveToDisc();
+		}
 		
 		$db_conn = Database::getConnection();
 		$params = array($this->name, $this->description,  $this->photoName, $this->price, $this->feactured, $this->stock, $this->department_id, $this->id);

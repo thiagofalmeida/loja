@@ -10,7 +10,6 @@
     private $error;
 
     public function __construct($data = array(), $folder){
-
       parent::__construct($data);
       $this->folder = $folder;
       $this->generateName();
@@ -68,10 +67,10 @@
     }
 
     public function validates() {
-     // if ($this->hasImage()) {
+      if ($this->hasImage()) {
         //Validations::lessThen($this->size, 1024*1024*1024, 'size', $this->errors); // menor que 3 megabytes
         //Validations::inclusionIn($this->type,array('image/jpeg','image/jpg','image/png','image/gif'),'type', $this->errors);
-      //}
+      }
     }
 
     public function hasImage() {
