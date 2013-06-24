@@ -13,12 +13,15 @@
       Validations::notEmpty($this->num, 'num', $this->errors);  
       Validations::notEmpty($this->state, 'state', $this->errors);
       Validations::notEmpty($this->password, 'password', $this->errors);
+      Validations::notEmpty($this->dtnasc, 'dtnasc', $this->errors);
       
       Validations::validEmail($this->email, 'email', $this->errors);
       Validations::uniqueField($this->email, 'email', 'users', 'email', $this->errors); 
       Validations::uniqueField($this->cpf, 'cpf', 'common', 'cpf', $this->errors);
       Validations::validPhone($this->phone, 'phone', $this->errors);
       Validations::validDate($this->dtnasc, 'dtnasc', $this->errors);
+      Validations::dateNotValid($this->dtnasc, 'dtnasc', $this->errors);
+      Validations::ageInappropriate($this->dtnasc, 'dtnasc', $this->errors);
       Validations::validCpf($this->cpf, 'cpf', $this->errors);
       Validations::validCep($this->cep, 'cep', $this->errors);
     }

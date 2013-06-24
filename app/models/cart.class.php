@@ -11,7 +11,7 @@ class Cart {
 	public function add($id) {
 		if ($this->exist($id)) {
 			$qnt = $_COOKIE["cart"][$id] + 1;
-			if (Product::getStockById($id)>=$qnt) {
+			if (Product::getStockById($id) >= $qnt) {
 				setcookie("cart[{$id}]", $qnt, time() + 3600 * 48, '/');
 				return true;	
 			} else {
@@ -20,7 +20,7 @@ class Cart {
 			}
 			
 		} else {
-			if (Product::getStockById($id)>=1) {
+			if (Product::getStockById($id) >= 1) {
 				setcookie("cart[{$id}]", 1, time() + 3600 * 48, '/');
 				return true;
 			} else {

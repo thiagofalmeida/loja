@@ -106,5 +106,49 @@ class Validations {
     }
     return true;
   }
+
+  public static function ageInappropriate($value, $key = null, &$errors = null) {
+    if (empty($value)) {
+      if ($key !== null && $errors !== null) {
+        $msg = 'não deve ser vazio';
+        $errors[$key] = $msg;
+      }
+      return false;
+    }
+
+    $date = explode("/", date('d/m/Y'));
+    $value = explode("/", $value);
+    $years = $date[2] - $value[2];
+
+    if (($years < 18) || ($years > 100)) {
+      if ($key !== null && $errors !== null) {
+        $msg = 'idade menor que 18 ou maior que 100';
+        $errors[$key] = $msg;
+      }
+      return false;
+    }
+    return true;
+  }
+
+  public static function dateNotValid($value, $key = null, &$errors = null) {
+    if (empty($value)) {
+      if ($key !== null && $errors !== null) {
+        $msg = 'não deve ser vazio';
+        $errors[$key] = $msg;
+      }
+      return false;
+    }
+
+    $value = explode("/", $value);
+
+    if (($value[0] > 32) || ($value[1] > 13)) { 
+      if ($key !== null && $errors !== null) {
+        $msg = 'dia ou mês não é válido';
+        $errors[$key] = $msg;
+      }
+      return false;
+    }
+    return true;
+  }
 }
 ?>

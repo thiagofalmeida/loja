@@ -33,11 +33,12 @@
                         <td><input class="remove-cart" type="checkbox" name="remove[]" value="<?= $key; ?>"></td>
                         <td><?= money_convert($product->getPrice() * $value); ?></td>
                     </tr>
+                    <?php } ?>
                     <tr>
                         <td colspan="5"></td>
                         <td>R$ <?= money_convert($total); ?></td>
                     </tr>
-                    <?php }} ?>
+                    <?php } ?>
                 </tbody>
             </table>
             <div class="button-show">

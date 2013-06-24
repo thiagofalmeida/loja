@@ -17,7 +17,7 @@
                             <h5><?= link_to("/categoria/{$product->getDepartment_Id()}/produto/{$product->getId()}",$product->getName()); ?></h5>
                             <h6><?= $product->getPrice(); ?></h6>
                             <?= button_to("/carrinho/{$product->getId()}", 'Add ao carrinho', 'btn btn-primary btn-small')?>
-                            <?= button_to("/carrinho/{$product->getId()}/fechar", 'Fechar a compra', 'btn btn-small')?>  
+                            <?= button_to("/fechar/{$product->getId()}", 'Fechar a compra', 'btn btn-small')?>  
                         </div>
                     </li>
                     <?php $i++;

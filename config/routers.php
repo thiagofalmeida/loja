@@ -205,7 +205,19 @@
                     page_not_found();
             }
         break; 
-		
+
+        case 'fechar':
+            switch ($url->numberOfParams()) {
+                case 1:
+                case 2:
+                    $controller = new CartController();
+                    $controller->close($url->params(1));
+                break;
+                default:
+                    page_not_found();
+            }
+        break;
+
 		case 'pedidos':
 			should_be_autenticated();
 			switch ($url->numberOfParams()) {

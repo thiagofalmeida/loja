@@ -23,8 +23,9 @@
  			</div>
  			<div class="show-btn">
  				<p class="add-cart"><?= button_to("/carrinho/{$product->getId()}", 'Adicionar ao carrinho', 'btn btn-info')?></p>
- 				<p><?= button_to("/carrinho/{$product->getId()}/fechar", 'Fechar a compra', 'btn btn-inverse')?></p>
+ 				<p><?= button_to("/fechar/{$product->getId()}", 'Fechar a compra', 'btn btn-inverse')?></p>
  			</div>
  		</div>
+ 		<div class="fb-comments" data-href="http://thiago.web.gp.utfpr.edu.br/loja" data-width="600" data-num-posts="10" data-colorscheme="dark"></div>
  	</article>
  </section>

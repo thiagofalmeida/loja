@@ -21,7 +21,7 @@
 
 				if ($order->save()) {
 					flash('success', 'Pedido realizado com sucesso!');
-					$cart=null;
+					$cart = null;
 					$order = Order::findById($order->getid());
 					$this->render(array('view' => 'order/list.phtml', 'cart' => $cart, 'order'=> $order));
 				} else {

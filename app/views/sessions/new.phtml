@@ -3,7 +3,7 @@
 		<h1>Login</h1>
 	</header>
 
-	<form class="form-horizontal" action='<?= url_for('/login')?>' method='POST' >
+	<form class="form-horizontal" action='<?= url_for("/login")?>' method='POST' >
 		<div class="control-group">
 			<label class="control-label" for="inputEmail">Email</label>
 			<div class="controls">
@@ -14,8 +14,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputPassword">Senha</label>
 			<div class="controls">
-				<input type="password" id="inputPassword" name="user[password]"
-				placeholder="Password">
+				<input type="password" id="inputPassword" name="user[password]"	placeholder="Password">
 			</div>
 		</div>
 
@@ -24,6 +23,5 @@
 				<button type="submit" class="btn">Entrar</button>
 			</div>
 		</div>
-		
 	</form>
 </section>

@@ -2,7 +2,6 @@
 	class ProductsController extends BaseController {
 
   		function details() {
-			$id = 51;
 			$product = Product::findById($id);
 
 			if ($product === null) {
@@ -13,7 +12,7 @@
 			$this->render(array('view' => 'products/details.phtml', 'product' => $product));
   		}
 
-		function index (){
+		function index() {
 			$products = Product::getAllByPage(5, 1);
     		$this->render(array('view' => 'products/index.phtml', 'products' => $products));
   		}
@@ -24,7 +23,7 @@
 		}
 		
 		function category($id) {
-			$ret= Product::findByDepartment($id);
+			$ret = Product::findByDepartment($id);
 			extract($ret);
 			$this->render(array('view' => 'products/index.phtml', 'products' => $products, 'numRows' => $numRows));
 		}

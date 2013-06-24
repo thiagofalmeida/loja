@@ -10,6 +10,7 @@
     <![endif]-->
  </head>
 <body>
+    <div id="fb-root"></div>
     <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -59,7 +60,7 @@
       <div class="span3">
         <div class="sidebar-nav">
           <ul class="nav nav-tabs nav-stacked nav-fixed">
-            <li><a><i ></i> Menu </a></li>
+            <li><a><i></i> Menu </a></li>
             <?php $departments = Department::getAll(); foreach($departments as $department) {?>
             	<li><?= link_to("/categoria/{$department->getId()}", "<i class=\"icon-chevron-right\"></i> {$department->getName()}") ?></li>
             <?php } ?>
