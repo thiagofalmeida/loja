@@ -47,10 +47,6 @@
       <h2>Loja Virtual</h2>
       <p class="lead">Simples, Prática e Funcional</p>
     </div>
-    <div class="show-cart">
-      <img src="/loja/app/assets/img/cart.png" alt="carrinho de compras" class="size-cart">
-      <a href="/loja/carrinho" class="show-items"><?php echo Cart::getItemsOnCart(); ?></a>
-    </div>
   </header>
 
   <div class="container-fluid">
@@ -63,9 +59,10 @@
           <ul class="nav nav-tabs nav-stacked nav-fixed">
             <li><a><i ></i> Menu Administrativo</a></li>
             <li><?= link_to('/admin/mensagens', '<i class="icon-chevron-right"></i> Mensagens'); ?></li>
-            <li><?= link_to('/admin/usuarios', '<i class="icon-chevron-right"></i> Usuários'); ?></li>
+            <li><?= link_to('/admin/departamentos', '<i class="icon-chevron-right"></i> Departamentos'); ?></li>
+            <li><?= link_to('/admin/produtos', '<i class="icon-chevron-right"></i> Produtos'); ?></li>
+            <li><?= link_to('/admin/pedidos', '<i class="icon-chevron-right"></i> Pedidos'); ?></li>
           </ul>
-
         </div>
       </div>
       <div class="span9">

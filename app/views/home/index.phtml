@@ -8,7 +8,8 @@
 		<div class="container-fluid">
         	<div class="row-fluid">
             <?php $i = 0; foreach($products as $product) {
-                if (($i % 3) == 0) {?>
+                if ($product->getStock() != 0) {
+                    if (($i % 3) == 0) {?>
                 <ul class="thumbnails">
                     <?php } ?>
                     <li class="span4">
@@ -23,7 +24,7 @@
                     <?php $i++;
                     if (($i % 3) == 0) { ?>
                 </ul>
-                <?php } } ?>
+                <?php } } } ?>
         	</div>
     	</div>
 	</article>
