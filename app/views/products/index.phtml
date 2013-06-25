@@ -1,6 +1,6 @@
 <section>
 	<header class="page-header">
-		<h1>Lista de Produtos</h1>
+		<h1><?php if (isset($dep)) { echo "Categoria " . $dep->getName(); } else { echo "Lista de Produtos";} ?></h1>
 	</header>
 	<article>
 		<div class="container-fluid">

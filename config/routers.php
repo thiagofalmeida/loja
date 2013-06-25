@@ -12,6 +12,16 @@
             $controller->index();
         break;
 
+        case 'busca':
+            if (($_POST['prodName']!= "") && (isset($_POST['prodName']))) {
+                $controller = new ProductsController();
+                $controller->search();      
+            } else {
+                flash("error","Você precisa digitar um valor para busca!");
+                redirect_to(back());
+            }    
+        break;
+
         case 'fale-conosco':
             switch ($url->numberOfParams()) {
                 case 1:
