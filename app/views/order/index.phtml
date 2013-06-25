@@ -1,0 +1,37 @@
+<section>
+    <header class='page-header'>
+        <div class='clearfix'>
+            <span class='left'><h3> Todos os Pedido</h3></span>
+        </div>
+    </header>
+
+    <article>
+        <table class='table table-bordered table-striped'>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Total</th>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($orders as $order) {?>
+                <tr>
+                    <td><?= $order->getId(); ?></td>
+                    <td><?= $order->getCreatedAt(); ?></td>
+                    <td><?=$order->getUser_Id();?></td>
+                    <td><?= $order->getTotal(); ?></td>
+                    <td><?= $order->getStatus(); ?></td>
+                    <td class='options'>
+                        <ul>
+                            <li><?= link_to("/pedidos/{$order->getId()}",'Visualizar')?></li>
+                        </ul>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </article>
+</section>
